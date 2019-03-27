@@ -11,7 +11,7 @@ In addition, it consists of an easy-to-use mini-batch loader, a large number of 
 .. toctree::
    :glob:
    :maxdepth: 1
-   :caption: Notes
+   :caption: Setup
 
    notes/installation
    notes/introduction
@@ -21,7 +21,7 @@ In addition, it consists of an easy-to-use mini-batch loader, a large number of 
 .. toctree::
    :glob:
    :maxdepth: 1
-   :caption: Package Reference
+   :caption: Data
 
    modules/nn
    modules/data
