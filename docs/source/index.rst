@@ -27,6 +27,11 @@ In addition, it consists of an easy-to-use mini-batch loader, a large number of 
    modules/datasets
    modules/transforms
    modules/utils
+   
+.. toctree::
+   :glob:
+   :maxdepth: 1
+   :caption: Code
 
 Indices and Tables
 ==================
