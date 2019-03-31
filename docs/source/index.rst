@@ -13,10 +13,9 @@ In addition, it consists of an easy-to-use mini-batch loader, a large number of 
    :maxdepth: 1
    :caption: Setup
 
-   notes/installation
-   notes/introduction
-   notes/create_gnn
-   notes/create_dataset
+   notes/School Setup
+   notes/Cluster Setup
+   notes/Group Setup
 
 .. toctree::
    :glob:
@@ -28,6 +27,12 @@ In addition, it consists of an easy-to-use mini-batch loader, a large number of 
    modules/datasets
    modules/transforms
    modules/utils
+
+.. toctree::
+   :glob:
+   :maxDepth: 1
+   :caption: Code
+
 
 Indices and Tables
 ==================
