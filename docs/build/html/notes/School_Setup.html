@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Creating your own datasets &mdash; pytorch_geometric master documentation</title>
+  <title>school_setup &mdash; pytorch_geometric master documentation</title>
   
 
   
@@ -46,6 +46,7 @@
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction by example" href="Cluster_Setup.html" />
     <link rel="prev" title="PyTorch Geometric documentation" href="../index.html" /> 
 </head>
 
@@ -99,9 +100,19 @@
             
               <p class="caption"><span class="caption-text">Setup</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Creating your own datasets</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#creating-in-memory-datasets">Creating “in memory datasets”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creating-larger-datasets">Creating “larger” datasets</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">school_setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cluster_Setup.html">Introduction by example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Cluster_Setup.html#data-handling-of-graphs">Data handling of graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cluster_Setup.html#common-benchmark-datasets">Common benchmark datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cluster_Setup.html#mini-batches">Mini-batches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cluster_Setup.html#data-transforms">Data transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cluster_Setup.html#learning-methods-on-graphs">Learning methods on graphs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Group_Setup.html">Creating message passing networks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Group_Setup.html#the-messagepassing-base-class">The “MessagePassing” base class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Group_Setup.html#implementing-the-gcn-layer">Implementing the GCN layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Group_Setup.html#implementing-the-edge-convolution">Implementing the edge convolution</a></li>
 </ul>
 </li>
 </ul>
@@ -149,7 +160,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Creating your own datasets</li>
+      <li>school_setup</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -168,134 +179,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="creating-your-own-datasets">
-<h1>Creating your own datasets<a class="headerlink" href="#creating-your-own-datasets" title="Permalink to this headline">¶</a></h1>
-<p>Although <a class="reference external" href="https://github.com/rusty1s/pytorch_geometric">PyTorch Geometric</a> already contains a lot of useful datasets, you may wish to create your own because you recorded data by yourself or want to use a dataset which is not publicly available.</p>
-<p>Implementing datasets by yourself is straightforward and you may have a look at the source code to find out how the various datasets are implemented.
-However, we give a brief introduction on what is needed to setup your own dataset.</p>
-<p>We provide two abstract classes for datasets: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch_geometric.data.Dataset</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">torch_geometric.data.InMemoryDataset</span></code>.
-<code class="xref py py-class docutils literal notranslate"><span class="pre">torch_geometric.data.InMemoryDataset</span></code> inherits from <code class="xref py py-class docutils literal notranslate"><span class="pre">torch_geometric.data.Dataset</span></code> and should be used if the whole dataset fits into memory.</p>
-<p>Each dataset gets passed a root folder.
-We split up the root folder into two folders: the <code class="docutils literal notranslate"><span class="pre">raw_dir</span></code>, where the dataset gets downloaded to, and the <code class="docutils literal notranslate"><span class="pre">processed_dir</span></code>, where the processed dataset is being saved.</p>
-<p>In addition, each dataset can be passed a <code class="docutils literal notranslate"><span class="pre">transform</span></code>, a <code class="docutils literal notranslate"><span class="pre">pre_transform</span></code> and a <code class="docutils literal notranslate"><span class="pre">pre_filter</span></code> function, which are <code class="docutils literal notranslate"><span class="pre">None</span></code> by default.
-The <code class="docutils literal notranslate"><span class="pre">transform</span></code> function dynamically transforms the data object before accessing (so it is best used for data augmentation).
-The <code class="docutils literal notranslate"><span class="pre">pre_transform</span></code> function applies the transformation before saving the data objects to disk (so it is best used for heavy precomputation which needs to be only done once).
-The <code class="docutils literal notranslate"><span class="pre">pre_filter</span></code> function can manually filter out data objects before saving.
-Use cases may involve the restriction of data objects being of a specific class.</p>
-<div class="section" id="creating-in-memory-datasets">
-<h2>Creating “in memory datasets”<a class="headerlink" href="#creating-in-memory-datasets" title="Permalink to this headline">¶</a></h2>
-<p>In order to create a <code class="xref py py-class docutils literal notranslate"><span class="pre">torch_geometric.data.InMemoryDataset</span></code>, you need to implement four fundamental methods:</p>
-<dl class="docutils">
-<dt><code class="xref py py-meth docutils literal notranslate"><span class="pre">torch_geometric.data.InMemoryDataset.raw_file_names()</span></code>:</dt>
-<dd>A list of files in the <code class="docutils literal notranslate"><span class="pre">raw_dir</span></code> which needs to be found in order to skip the download.</dd>
-<dt><code class="xref py py-meth docutils literal notranslate"><span class="pre">torch_geometric.data.InMemoryDataset.processed_file_names()</span></code>:</dt>
-<dd>A list of files in the <code class="docutils literal notranslate"><span class="pre">processed_dir</span></code> which needs to be found in order to skip the processing.</dd>
-<dt><code class="xref py py-meth docutils literal notranslate"><span class="pre">torch_geometric.data.InMemoryDataset.download()</span></code>:</dt>
-<dd>Downloads raw data into <code class="docutils literal notranslate"><span class="pre">raw_dir</span></code>.</dd>
-<dt><code class="xref py py-meth docutils literal notranslate"><span class="pre">torch_geometric.data.InMemoryDataset.process()</span></code>:</dt>
-<dd>Processes raw data and saves it into the <code class="docutils literal notranslate"><span class="pre">processed_dir</span></code>.</dd>
-</dl>
-<p>You can find helpful methods to download and extract data in <code class="xref py py-mod docutils literal notranslate"><span class="pre">torch_geometric.data</span></code>.</p>
-<p>The real magic happens in the body of <code class="xref py py-meth docutils literal notranslate"><span class="pre">torch_geometric.data.InMemoryDataset.process()</span></code>.
-Here, we need to read and create a list of <code class="xref py py-class docutils literal notranslate"><span class="pre">torch_geometric.data.Data</span></code> objects and save it into the <code class="docutils literal notranslate"><span class="pre">processed_dir</span></code>.
-Because saving a huge python list is really slow, we collate the list into one huge <code class="docutils literal notranslate"><span class="pre">Data</span></code> object via <code class="xref py py-meth docutils literal notranslate"><span class="pre">torch_geometric.data.InMemoryDataset.collate()</span></code> before saving .
-The collated data object has simply concatenated all examples (similar to <code class="xref py py-class docutils literal notranslate"><span class="pre">torch_geometric.data.DataLoader</span></code>) and, in addition, returns a <code class="docutils literal notranslate"><span class="pre">slices</span></code> dictionary to reconstruct single examples from the object.
-Finally, these objects get loaded in the constructor and must be accessible via <code class="docutils literal notranslate"><span class="pre">self.data</span></code> and <code class="docutils literal notranslate"><span class="pre">self.slices</span></code>.</p>
-<p>Let’s see this process in a simplified example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">from</span> <span class="nn">torch_geometric.data</span> <span class="kn">import</span> <span class="n">InMemoryDataset</span>
-
-
-<span class="k">class</span> <span class="nc">MyOwnDataset</span><span class="p">(</span><span class="n">InMemoryDataset</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">pre_transform</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">MyOwnDataset</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">transform</span><span class="p">,</span> <span class="n">pre_transform</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">slices</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processed_paths</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">raw_file_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;some_file_1&#39;</span><span class="p">,</span> <span class="s1">&#39;some_file_2&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">processed_file_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;data.pt&#39;</span><span class="p">]</span>
-
-    <span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># Download to `self.raw_dir`.</span>
-
-    <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># Read data into huge `Data` list.</span>
-        <span class="n">data_list</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
-
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pre_filter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="n">data_list</span> <span class="p">[</span><span class="n">data</span> <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">data_list</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pre_filter</span><span class="p">(</span><span class="n">data</span><span class="p">)]</span>
-
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pre_transform</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="n">data_list</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">pre_transform</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">data_list</span><span class="p">]</span>
-
-        <span class="n">data</span><span class="p">,</span> <span class="n">slices</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">collate</span><span class="p">(</span><span class="n">data_list</span><span class="p">)</span>
-        <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">((</span><span class="n">data</span><span class="p">,</span> <span class="n">slices</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">processed_paths</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="creating-larger-datasets">
-<h2>Creating “larger” datasets<a class="headerlink" href="#creating-larger-datasets" title="Permalink to this headline">¶</a></h2>
-<p>For creating datasets which do not fit into memory, the <code class="xref py py-class docutils literal notranslate"><span class="pre">torch_geometric.data.Dataset</span></code> must be used, where we follow an analogous concept of the <code class="docutils literal notranslate"><span class="pre">torchvision</span></code> datasets.</p>
-<p>Therefore, the following methods need to be further implemented:</p>
-<dl class="docutils">
-<dt><code class="xref py py-meth docutils literal notranslate"><span class="pre">torch_geometric.data.Dataset.__len__()</span></code>:</dt>
-<dd>How many graphs are in your dataset?</dd>
-<dt><code class="xref py py-meth docutils literal notranslate"><span class="pre">torch_geometric.data.Dataset.get()</span></code>:</dt>
-<dd>Logic to load a single graph.
-The <code class="docutils literal notranslate"><span class="pre">Data</span></code> object will be automatically transformed according to <code class="docutils literal notranslate"><span class="pre">self.transform</span></code>.</dd>
-</dl>
-<p>Note that <code class="xref py py-meth docutils literal notranslate"><span class="pre">torch_geometric.data.Dataset.__getitem__()</span></code> is already implemented, which simply gets the data object from <code class="xref py py-meth docutils literal notranslate"><span class="pre">torch_geometric.data.Dataset.get()</span></code> and optionally transforms it.</p>
-<p>Let’s see this process in a simplified example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os.path</span> <span class="kn">as</span> <span class="nn">osp</span>
-
-<span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">from</span> <span class="nn">torch_geometric.data</span> <span class="kn">import</span> <span class="n">Dataset</span>
-
-
-<span class="k">class</span> <span class="nc">MyOwnDataset</span><span class="p">(</span><span class="n">Dataset</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">pre_transform</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">MyOwnDataset</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">transform</span><span class="p">,</span> <span class="n">pre_transform</span><span class="p">)</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">raw_file_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;some_file_1&#39;</span><span class="p">,</span> <span class="s1">&#39;some_file_2&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">processed_file_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;data_1.pt&#39;</span><span class="p">,</span> <span class="s1">&#39;data_2.pt&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
-
-    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processed_file_names</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># Download to `self.raw_dir`.</span>
-
-    <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">for</span> <span class="n">raw_path</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_paths</span><span class="p">:</span>
-             <span class="c1"># Read data from `raw_path`.</span>
-             <span class="n">data</span> <span class="o">=</span> <span class="n">Data</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-
-             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pre_filter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">pre_filter</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-                 <span class="k">continue</span>
-
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pre_transform</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-                 <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pre_transform</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-
-            <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">ops</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processed_dir</span><span class="p">,</span> <span class="s1">&#39;data_{}.pt&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span>
-            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-
-    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">osp</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processed_dir</span><span class="p">,</span> <span class="s1">&#39;data_{}.pt&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">data</span>
-</pre></div>
-</div>
-<p>Here, each graph data object gets saved individually in <code class="xref py py-meth docutils literal notranslate"><span class="pre">torch_geometric.data.Dataset.process()</span></code>, and is manually loaded in <code class="xref py py-meth docutils literal notranslate"><span class="pre">torch_geometric.data.Dataset.get()</span></code>.</p>
-</div>
+  <div class="section" id="school-setup">
+<h1>school_setup<a class="headerlink" href="#school-setup" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -305,6 +190,8 @@ The <code class="docutils literal notranslate"><span class="pre">Data</span></co
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Cluster_Setup.html" class="btn btn-neutral float-right" title="Introduction by example" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../index.html" class="btn btn-neutral float-left" title="PyTorch Geometric documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
