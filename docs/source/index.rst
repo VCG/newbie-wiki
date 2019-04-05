@@ -22,12 +22,6 @@ In addition, it consists of an easy-to-use mini-batch loader, a large number of 
    :maxdepth: 1
    :caption: Data
 
-   modules/nn
-   modules/data
-   modules/datasets
-   modules/transforms
-   modules/utils
-   
 .. toctree::
    :glob:
    :maxdepth: 1
