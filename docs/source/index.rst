@@ -1,4 +1,4 @@
-:github_url: https://github.com/rusty1s/pytorch_geometric
+github_url: https://github.com/rusty1s/pytorch_geometric
 
 PyTorch Geometric documentation
 ===============================
@@ -27,11 +27,12 @@ In addition, it consists of an easy-to-use mini-batch loader, a large number of 
    modules/datasets
    modules/transforms
    modules/utils
-
+   
 .. toctree::
    :glob:
-   :maxDepth: 1
+   :maxdepth: 1
    :caption: Code
+
 
 
 Indices and Tables
