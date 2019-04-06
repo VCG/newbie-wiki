@@ -1,6 +1,4 @@
-github_url: https://github.com/VCG/vcg-wiki
-
-Welcome to SEAS
+Welcome to Visual Computing Group !!!
 ===============================
 
 .. toctree::

@@ -19,7 +19,7 @@ author = 'VCG'
 project = 'Intern-Wiki'
 copyright = '{}, {}'.format(datetime.datetime.now().year, author)
 
-version = 'master (0.0.1)'
+version = 'master (2019.04.06)'
 release = 'master'
 
 html_theme = 'sphinx_rtd_theme'
@@ -34,7 +34,7 @@ html_theme_options = {
     'logo_only': True,
 }
 
-html_logo = '_static/img/vcg-logo.jpg'
+html_logo = '_static/img/vcg-logo_100.jpg'
 html_static_path = ['_static']
 html_context = {'css_files': ['_static/css/custom.css']}
 
