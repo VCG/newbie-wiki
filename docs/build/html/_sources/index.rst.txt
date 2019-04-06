@@ -6,20 +6,20 @@ Welcome to Visual Computing Group !!!
    :maxdepth: 1
    :caption: Setup
 
-   notes/School_Setup
-   notes/Cluster_Setup
-   notes/Group_Setup
+   setup/school
+   setup/cluster
+   setup/group
 
 .. toctree::
    :glob:
    :maxdepth: 1
    :caption: Data
    
-   data_note/data_point
+   data/data_point
 
 .. toctree::
    :glob:
    :maxdepth: 1
    :caption: Code
    
-   code_section/sample_code
+   code/sample_code
