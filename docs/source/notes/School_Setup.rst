@@ -5,7 +5,7 @@ Welcome to SEAS
 ========================
 
 Please find some general information here:
-[http://www.seas.harvard.edu/about-seas/map-directions](https://www.seas.harvard.edu/visit-us)
+http://www.seas.harvard.edu/about-seas/map-directions
 
 
 Please follow these steps to make your start at SEAS as smooth as possible.
@@ -38,7 +38,9 @@ IT Tips
 
 1. Wifi=Harvard Secure: (smartphone, computer)
 http://wifi.harvard.edu/harvard-secure.html
+
 2. Computation cluster accounts
+
    1. Go to Harvard ID office to get ID and fas email: http://huid.harvard.edu/
    2. Register HarvardKey: https://key.harvard.edu/
    3. Request SEAS email: https://password.seas.harvard.edu/itapps/apply/
@@ -58,7 +60,9 @@ http://wifi.harvard.edu/harvard-secure.html
        1. Ask group member to find admin to invite to your fas or seas email
        2. Group general: vcgplusplus.slack.com
        3. Connectomics: rhoana.slack.com
+       
 3. Misc
+
    1. Email client
       1. Browser: https://outlook.office.com/owa/? realm=harvard.edu
       2. Thunderbird: (replace standford with harvard) https://uit.stanford.edu/service/office365/configure/thunderbird
