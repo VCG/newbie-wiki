@@ -19,8 +19,8 @@ author = 'VCG'
 project = 'Intern-Wiki'
 copyright = '{}, {}'.format(datetime.datetime.now().year, author)
 
-version = 'master (2019.04.06)'
-release = 'master'
+#version = 'master (2019.04.06)'
+#release = 'master'
 
 html_theme = 'sphinx_rtd_theme'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
