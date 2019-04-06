@@ -1,7 +1,7 @@
 School Setup
 ========================
 
-# **Welcome to SEAS**
+#Welcome to SEAS
 
 Please find some general information here:
 [http://www.seas.harvard.edu/about-seas/map-directions](https://www.seas.harvard.edu/visit-us)
@@ -11,12 +11,19 @@ Please follow these steps to make your start at SEAS as smooth as possible.
 
 * If you don’t have already, please request access to the VCG google drive file.
 Sign up and add your information to the VCG Group information. You will be able to find relevant information, e.g. VCG group meeting schedule, VCG lunch order, presentation, etc.
+
 * Please add your information to the group information sheet https://docs.google.com/spreadsheet/ccc?key=0AtePNvrCJCcedEtVdjlMV0tKWmVBamI4N25fTjdVelE&usp=drive_web#gid=0
+
 * Request access to google drive from Michaela
+
 * (MD) Request key/swipe access for your office, contact Michaela (michaela@seas.harvard.edu) MD 353. Please visit Jason Ortega (jortega@seas,harvard.edu) Pierce G3E to pick up your key.
+
 * (Northwest Building, NW) Request key/swipe access at the building management office on the first floor of NW. They will give you two fill out forms (one for room entrance / one for building entrance). Receive a signature from Suzanne Montgomery (Administrative Lab Manager in Lichtman’s group) at Room 249.40 NW. Then, go back go the management office again to apply the accesses.
+
 * Please add yourself to the VCG people list, instructions at the end of this document. 
+
 * Mail: Find your mail in the Pfister Mailbox slot on 2nd level of MD on your right hand side walking up the stairway.
+
 * Commuter Choice (discount for MBTA): http://www.transportation.harvard.edu/commuterchoice
 
 ### Harvard University ID Discounts
