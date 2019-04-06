@@ -16,6 +16,7 @@ Welcome to SEAS
    :glob:
    :maxdepth: 1
    :caption: Data
+	data_note/data_point
 
 .. toctree::
    :glob:
