@@ -15,7 +15,7 @@ extensions = [
 source_suffix = '.rst'
 master_doc = 'index'
 
-author = 'Matthias Fey'
+author = 'VCG'
 project = 'pytorch_geometric'
 copyright = '{}, {}'.format(datetime.datetime.now().year, author)
 
@@ -34,7 +34,7 @@ html_theme_options = {
     'logo_only': True,
 }
 
-html_logo = '_static/img/pyg_logo_text.svg'
+html_logo = '_static/img/vcg_seas_harvard_edu.svg'
 html_static_path = ['_static']
 html_context = {'css_files': ['_static/css/custom.css']}
 
