@@ -1,14 +1,14 @@
-Welcome to Visual Computing Group !!!
-===============================
+Welcome to Visual Computing Group
+===========================================
 
 .. toctree::
    :glob:
    :maxdepth: 1
    :caption: Setup
 
-   setup/school
-   setup/cluster
-   setup/group
+   setup/registration
+   setup/computation
+   setup/tips
 
 .. toctree::
    :glob:
