@@ -16,7 +16,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 author = 'VCG'
-project = 'pytorch_geometric'
+project = 'VCG-Wiki'
 copyright = '{}, {}'.format(datetime.datetime.now().year, author)
 
 version = 'master (0.0.1)'
@@ -34,7 +34,7 @@ html_theme_options = {
     'logo_only': True,
 }
 
-html_logo = '_static/img/vcg_seas_harvard_edu.svg'
+html_logo = 'favicon.svg'
 html_static_path = ['_static']
 html_context = {'css_files': ['_static/css/custom.css']}
 
