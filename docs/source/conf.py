@@ -34,7 +34,7 @@ html_theme_options = {
     'logo_only': True,
 }
 
-html_logo = 'favicon.svg'
+html_logo = 'vcg.svg'
 html_static_path = ['_static']
 html_context = {'css_files': ['_static/css/custom.css']}
 
