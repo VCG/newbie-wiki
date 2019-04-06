@@ -16,7 +16,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 author = 'VCG'
-project = 'VCG-Wiki'
+project = 'Intern-Wiki'
 copyright = '{}, {}'.format(datetime.datetime.now().year, author)
 
 version = 'master (0.0.1)'
@@ -34,7 +34,7 @@ html_theme_options = {
     'logo_only': True,
 }
 
-html_logo = 'vcg.svg'
+html_logo = '_static/img/vcg-logo.jpg'
 html_static_path = ['_static']
 html_context = {'css_files': ['_static/css/custom.css']}
 
