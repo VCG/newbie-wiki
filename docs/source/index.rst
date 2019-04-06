@@ -16,17 +16,12 @@ Welcome to SEAS
    :glob:
    :maxdepth: 1
    :caption: Data
-	data_note/data_point
+   
+   data_note/data_point
 
 .. toctree::
    :glob:
    :maxdepth: 1
    :caption: Code
-
-
-
-Indices and Tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
+   
+   code_section/sample_code
