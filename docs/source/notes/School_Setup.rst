@@ -1,7 +1,8 @@
 School Setup
 ========================
 
-#Welcome to SEAS
+Welcome to SEAS
+========================
 
 Please find some general information here:
 [http://www.seas.harvard.edu/about-seas/map-directions](https://www.seas.harvard.edu/visit-us)
@@ -26,18 +27,15 @@ Sign up and add your information to the VCG Group information. You will be able 
 
 * Commuter Choice (discount for MBTA): http://www.transportation.harvard.edu/commuterchoice
 
-### Harvard University ID Discounts
+Harvard University ID Discounts
+===============================
 
 * Free Entrance to all Harvard museums
 * Free Entrance to the Museum of Fine Arts, Institute of Contemporary Arts and the Isabella Stewart Gardner Museum. (Note:The discounts for non-Harvard museums might only be valid if your ID says student on it).
 
+IT Tips
+========================
 
-
-
-
-
-
-### IT Tips
 1. Wifi=Harvard Secure: (smartphone, computer)
 http://wifi.harvard.edu/harvard-secure.html
 2. Computation cluster accounts
