@@ -1,12 +1,27 @@
 School Setup
 ========================
 
-Please find some general information here:
-http://www.seas.harvard.edu/about-seas/map-directions
+Registration
+-----------
+   1. Harvard ID office: get ID and fas email: http://huid.harvard.edu/
+   
+   2. Office Keys
+        * Maxwell-Dowrkin (MD) 
+            - contact Michaela (michaela@seas.harvard.edu) MD 353 for application
+            - visit Jason Ortega @Pierce Hall G3E to pick up your key
+        * Northwest Building (NW) 
+            -contact Suzanne NW220 for application
+            - visit Jesselynn Opie @NW 1 to pick up your key
+
+   3. Register HarvardKey: https://key.harvard.edu/
+
+   4. Request SEAS email: https://password.seas.harvard.edu/itapps/apply/
+      *  seas IT will change your HavardKey account from fas email to seas email
+      *  on HarvardKey website, “Manage Your Account & Services” -> login -> “Synchronize Password”
 
 
-Please follow these steps to make your start at SEAS as smooth as possible.
-
+Registration
+-----------
 * If you don’t have already, please request access to the VCG google drive file.
 Sign up and add your information to the VCG Group information. You will be able to find relevant information, e.g. VCG group meeting schedule, VCG lunch order, presentation, etc.
 
@@ -14,7 +29,6 @@ Sign up and add your information to the VCG Group information. You will be able 
 
 * Request access to google drive from Michaela
 
-* (MD) Request key/swipe access for your office, contact Michaela (michaela@seas.harvard.edu) MD 353. Please visit Jason Ortega (jortega@seas,harvard.edu) Pierce G3E to pick up your key.
 
 * (Northwest Building, NW) Request key/swipe access at the building management office on the first floor of NW. They will give you two fill out forms (one for room entrance / one for building entrance). Receive a signature from Suzanne Montgomery (Administrative Lab Manager in Lichtman’s group) at Room 249.40 NW. Then, go back go the management office again to apply the accesses.
 
@@ -24,25 +38,12 @@ Sign up and add your information to the VCG Group information. You will be able 
 
 * Commuter Choice (discount for MBTA): http://www.transportation.harvard.edu/commuterchoice
 
-Harvard University ID Discounts
---------------------------------
-
-* Free Entrance to all Harvard museums
-* Free Entrance to the Museum of Fine Arts, Institute of Contemporary Arts and the Isabella Stewart Gardner Museum. (Note:The discounts for non-Harvard museums might only be valid if your ID says student on it).
-
 IT Tips
 -------------------
 
 1. Wifi=Harvard Secure: (smartphone, computer) http://wifi.harvard.edu/harvard-secure.html
 
 2. Computation cluster accounts
-   1. Go to Harvard ID office to get ID and fas email: http://huid.harvard.edu/
-   
-   2. Register HarvardKey: https://key.harvard.edu/
-   
-   3. Request SEAS email: https://password.seas.harvard.edu/itapps/apply/
-      1.  seas IT will change your HavardKey account from fas email to seas email
-      2.  on HarvardKey website, “Manage Your Account & Services” -> login -> “Synchronize Password”
    
    4. RC server account: 
       1. https://www.rc.fas.harvard.edu/resources/access-and-login/
@@ -62,14 +63,21 @@ IT Tips
        2. Group general: vcgplusplus.slack.com
        3. Connectomics: rhoana.slack.com
        
-3. Misc
+Misc
+--------------------------------
+1. Email client
+  1. Browser: https://outlook.office.com/owa/? realm=harvard.edu
+  2. Thunderbird: (replace standford with harvard) https://uit.stanford.edu/service/office365/configure/thunderbird
+  3. Others: https://www.seas.harvard.edu/computing-office/email/set-up-email-client
+  
+  
+2. Adobe Software:http://huit.harvard.edu/services/campus-licensed-software
+   1. Printing at SEAS: 
+     1. https://www.seas.harvard.edu/computing-office/printing/public-network-printers
 
-   1. Email client
-      1. Browser: https://outlook.office.com/owa/? realm=harvard.edu
-      2. Thunderbird: (replace standford with harvard) https://uit.stanford.edu/service/office365/configure/thunderbird
-      3. Others: https://www.seas.harvard.edu/computing-office/email/set-up-email-client
-      
-      
-   2. Adobe Software:http://huit.harvard.edu/services/campus-licensed-software
-       1. Printing at SEAS: 
-         1. https://www.seas.harvard.edu/computing-office/printing/public-network-printers
+3. Harvard University ID Discounts
+
+* Free Entrance to all Harvard museums
+* Free Entrance to the Museum of Fine Arts, Institute of Contemporary Arts and the Isabella Stewart Gardner Museum. (Note:The discounts for non-Harvard museums might only be valid if your ID says student on it).
+
+
