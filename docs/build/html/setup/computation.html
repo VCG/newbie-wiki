@@ -203,20 +203,20 @@
 * Get an interactive shell for debug: (${1}: memory in MB, ${2}: # of CPUs, ${3}: # of GPUs)</p>
 <blockquote>
 <div><ul class="simple">
-<li>CPU: <cite>srun –pty -p cox -t 7-00:00 –mem ${1} -n ${2} /bin/bash</cite></li>
-<li>GPU: <cite>srun –pty -p cox -t 7-00:00 –mem ${1} -n ${2} –gres=gpu:${3} /bin/bash</cite></li>
+<li>CPU: <code class="docutils literal notranslate"><span class="pre">srun</span> <span class="pre">--pty</span> <span class="pre">-p</span> <span class="pre">cox</span> <span class="pre">-t</span> <span class="pre">7-00:00</span> <span class="pre">--mem</span> <span class="pre">${1}</span> <span class="pre">-n</span> <span class="pre">${2}</span> <span class="pre">/bin/bash</span></code></li>
+<li>GPU: <code class="docutils literal notranslate"><span class="pre">srun</span> <span class="pre">--pty</span> <span class="pre">-p</span> <span class="pre">cox</span> <span class="pre">-t</span> <span class="pre">7-00:00</span> <span class="pre">--mem</span> <span class="pre">${1}</span> <span class="pre">-n</span> <span class="pre">${2}</span> <span class="pre">--gres=gpu:${3}</span> <span class="pre">/bin/bash</span></code></li>
 </ul>
 </div></blockquote>
 <ul class="simple">
 <li>Submit job in the background:
-+ <cite>/n/coxfs01/donglai/ppl/public/example_slurm.py</cite></li>
++ <code class="docutils literal notranslate"><span class="pre">/n/coxfs01/donglai/ppl/public/example_slurm.py</span></code></li>
 </ul>
 </li>
 <li><p class="first">Setup CUDA env
-* Request a GPU machine (<cite>srun</cite> or <cite>sbatch</cite>)
-* Load cuda on rc cluster: <cite>module load cuda/9.0-fasrc02 cudnn/7.0_cuda9.0-fasrc01</cite></p>
+* Request a GPU machine (<code class="docutils literal notranslate"><span class="pre">srun</span></code> or <code class="docutils literal notranslate"><span class="pre">sbatch</span></code>)
+* Load cuda on rc cluster: <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">cuda/9.0-fasrc02</span> <span class="pre">cudnn/7.0_cuda9.0-fasrc01</span></code></p>
 </li>
-<li><p class="first">Deep learning env (python3/EM-network): <cite>source /n/coxfs01/donglai/lib/miniconda2/bin/activate em-net</cite></p>
+<li><p class="first">Deep learning env (python3/EM-network): <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/n/coxfs01/donglai/lib/miniconda2/bin/activate</span> <span class="pre">em-net</span></code></p>
 </li>
 <li><p class="first">ssh tunnel for port forwarding (e.g. tensorboard display)
 * Parameters:</p>
@@ -228,8 +228,8 @@
 </ul>
 </div></blockquote>
 <ul class="simple">
-<li>On local machine: <cite>ssh -L p1:localhost:p2 xx&#64;login.rc.fas.harvard.edu</cite></li>
-<li>On rc login server: <cite>ssh -L p2:localhost:p2 M1</cite></li>
+<li>On local machine: <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-L</span> <span class="pre">p1:localhost:p2</span> <span class="pre">xx&#64;login.rc.fas.harvard.edu</span></code></li>
+<li>On rc login server: <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-L</span> <span class="pre">p2:localhost:p2</span> <span class="pre">M1</span></code></li>
 </ul>
 </li>
 </ul>
