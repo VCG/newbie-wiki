@@ -184,21 +184,29 @@
 <h1>Computation<a class="headerlink" href="#computation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="harvard-rc-server-coxfs-coxgpu">
 <h2>Harvard RC server (+coxfs/coxgpu)<a class="headerlink" href="#harvard-rc-server-coxfs-coxgpu" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Get account (with SEAS account)</p>
 <ul class="simple">
-<li>Get account (with SEAS account)<ul>
 <li><a class="reference external" href="https://www.rc.fas.harvard.edu/resources/access-and-login/">RC account</a>.</li>
 <li><a class="reference external" href="https://portal.rc.fas.harvard.edu/login/?next=/request/grants/add%3Fsearch%3Dcox_lab">coxfs01 access</a>.</li>
 </ul>
 </li>
-<li>Mount coxfs01 file system to local machine<ul>
-<li>Install packages: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">cifs-utils</span></code></li>
-<li>Get your gid on your local machine: <code class="docutils literal notranslate"><span class="pre">id</span></code></li>
-<li>Mount it with your rc username and local machine gid
-::
-sudo mount -t cifs -o vers=1.0,workgroup=rc,username=${1},gid=${2} //coxfs01.rc.fas.harvard.edu/coxfs01 /mnt/coxfs01</li>
+<li><p class="first">Mount coxfs01 file system to local machine</p>
+<ul>
+<li><p class="first">Install packages: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">cifs-utils</span></code></p>
+</li>
+<li><p class="first">Get your gid on your local machine: <code class="docutils literal notranslate"><span class="pre">id</span></code></p>
+</li>
+<li><p class="first">Mount it with your rc username and local machine gid</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo mount -t cifs -o vers=1.0,workgroup=rc,username=${1},gid=${2} \
+//coxfs01.rc.fas.harvard.edu/coxfs01 /mnt/coxfs01
+</pre></div>
+</div>
+</li>
 </ul>
 </li>
-<li>Submit jobs through slurm scheduler <a class="reference external" href="https://www.rc.fas.harvard.edu/resources/running-jobs/">official tutorial</a>.<ul>
+<li><p class="first">Submit jobs through slurm scheduler <a class="reference external" href="https://www.rc.fas.harvard.edu/resources/running-jobs/">official tutorial</a>.</p>
+<ul class="simple">
 <li>Get an interactive shell for debug: (${1}: memory in MB, ${2}: # of CPUs, ${3}: # of GPUs)
 + CPU: <code class="docutils literal notranslate"><span class="pre">srun</span> <span class="pre">--pty</span> <span class="pre">-p</span> <span class="pre">cox</span> <span class="pre">-t</span> <span class="pre">7-00:00</span> <span class="pre">--mem</span> <span class="pre">${1}</span> <span class="pre">-n</span> <span class="pre">${2}</span> <span class="pre">/bin/bash</span></code>
 + GPU: <code class="docutils literal notranslate"><span class="pre">srun</span> <span class="pre">--pty</span> <span class="pre">-p</span> <span class="pre">cox</span> <span class="pre">-t</span> <span class="pre">7-00:00</span> <span class="pre">--mem</span> <span class="pre">${1}</span> <span class="pre">-n</span> <span class="pre">${2}</span> <span class="pre">--gres=gpu:${3}</span> <span class="pre">/bin/bash</span></code></li>
@@ -206,20 +214,26 @@ sudo mount -t cifs -o vers=1.0,workgroup=rc,username=${1},gid=${2} //coxfs01.rc.
 <code class="docutils literal notranslate"><span class="pre">/n/coxfs01/donglai/ppl/public/example_slurm.py</span></code></li>
 </ul>
 </li>
-<li>Setup CUDA env<ul>
+<li><p class="first">Setup CUDA env</p>
+<ul class="simple">
 <li>Request a GPU machine (<code class="docutils literal notranslate"><span class="pre">srun</span></code> or <code class="docutils literal notranslate"><span class="pre">sbatch</span></code>)</li>
 <li>Load cuda on rc cluster: <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">cuda/9.0-fasrc02</span> <span class="pre">cudnn/7.0_cuda9.0-fasrc01</span></code></li>
 </ul>
 </li>
-<li>Deep learning env (python3/EM-network): <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/n/coxfs01/donglai/lib/miniconda2/bin/activate</span> <span class="pre">em-net</span></code></li>
-<li>ssh tunnel for port forwarding (e.g. tensorboard display)<ul>
-<li>Parameters:
-# p1: port you want to display on localhost
-# P2: port on rc server
-# M1: coxgpu name, e.g. coxgpu06</li>
-<li>On local machine:
-<code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-L</span> <span class="pre">p1:localhost:p2</span> <span class="pre">xx&#64;login.rc.fas.harvard.edu</span></code></li>
-<li>On rc login server: <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-L</span> <span class="pre">p2:localhost:p2</span> <span class="pre">M1</span></code></li>
+<li><p class="first">Deep learning env (python3/EM-network): <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/n/coxfs01/donglai/lib/miniconda2/bin/activate</span> <span class="pre">em-net</span></code></p>
+</li>
+<li><p class="first">ssh tunnel for port forwarding (e.g. tensorboard display)</p>
+<ul>
+<li><p class="first">Parameters:</p>
+<p># p1: port you want to display on localhost
+# p2: port on rc server
+# m1: coxgpu name, e.g. coxgpu06</p>
+</li>
+<li><p class="first">On local machine:
+<code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-L</span> <span class="pre">p1:localhost:p2</span> <span class="pre">xx&#64;login.rc.fas.harvard.edu</span></code></p>
+</li>
+<li><p class="first">On rc login server: <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-L</span> <span class="pre">p2:localhost:p2</span> <span class="pre">M1</span></code></p>
+</li>
 </ul>
 </li>
 </ul>

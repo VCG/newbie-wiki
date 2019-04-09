@@ -17,8 +17,9 @@ Harvard RC server (+coxfs/coxgpu)
 
   * Mount it with your rc username and local machine gid
     ::
-    sudo mount -t cifs -o vers=1.0,workgroup=rc,username=${1},gid=${2} \
-    //coxfs01.rc.fas.harvard.edu/coxfs01 /mnt/coxfs01
+
+        sudo mount -t cifs -o vers=1.0,workgroup=rc,username=${1},gid=${2} \
+        //coxfs01.rc.fas.harvard.edu/coxfs01 /mnt/coxfs01
 
 - Submit jobs through slurm scheduler `official tutorial <https://www.rc.fas.harvard.edu/resources/running-jobs/>`_.
 
@@ -38,9 +39,10 @@ Harvard RC server (+coxfs/coxgpu)
 - ssh tunnel for port forwarding (e.g. tensorboard display)
 
   * Parameters:
+
     # p1: port you want to display on localhost
-    # P2: port on rc server
-    # M1: coxgpu name, e.g. coxgpu06
+    # p2: port on rc server
+    # m1: coxgpu name, e.g. coxgpu06
   * On local machine: 
     ``ssh -L p1:localhost:p2 xx@login.rc.fas.harvard.edu``
   * On rc login server: ``ssh -L p2:localhost:p2 M1``
