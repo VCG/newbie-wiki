@@ -53,6 +53,7 @@ Group server (hp03 machine)
 - ssh: ``ssh ${IP}``
 - Jupyter notebook: ``http://${IP}:9999``
 - install miniconda
+
   * local copy (py27): ``sh /home/donglai/Downloads/Miniconda2-latest-Linux-x86_64.sh``
 
   * `download <https://conda.io/en/latest/miniconda.html>`_.
