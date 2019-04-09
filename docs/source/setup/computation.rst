@@ -15,10 +15,10 @@ Harvard RC server (+coxfs/coxgpu)
 
   * Get your gid on your local machine: ``id``
 
-  * Mount it with your rc username and local machine gid:  
-    ``
-    sudo mount -t cifs -o vers=1.0,workgroup=rc,username=${1},gid=${2} \ //coxfs01.rc.fas.harvard.edu/coxfs01 /mnt/coxfs01
-    ``
+  * Mount it with your rc username and local machine gid
+    ::
+    sudo mount -t cifs -o vers=1.0,workgroup=rc,username=${1},gid=${2} \
+    //coxfs01.rc.fas.harvard.edu/coxfs01 /mnt/coxfs01
 
 - Submit jobs through slurm scheduler `official tutorial <https://www.rc.fas.harvard.edu/resources/running-jobs/>`_.
 
@@ -52,10 +52,10 @@ Group server (hp03 machine)
 - Jupyter notebook: ``http://${IP}:9999``
 - install miniconda
   * local copy (py27): ``sh /home/donglai/Downloads/Miniconda2-latest-Linux-x86_64.sh``
-  * download `link <https://conda.io/en/latest/miniconda.html>`
+
+  * `download <https://conda.io/en/latest/miniconda.html>`_.
 - cmds for neuroglancer
-  ```
+  ::
   screen
   source /home/donglai/miniconda2/bin/activate ng
   python -i xxx.py
-  ```
