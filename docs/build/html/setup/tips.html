@@ -183,48 +183,73 @@
   <div class="section" id="tips">
 <h1>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h1>
 <ul>
-<li><p class="first">Coding
-* local machine: local development
-* rc server: run big jobs
-* hp03 server: public visualization (html, neuroglancer)</p>
+<li><dl class="first docutils">
+<dt>Coding</dt>
+<dd><ul class="first last simple">
+<li>local machine: local development</li>
+<li>rc server: run big jobs</li>
+<li>hp03 server: public visualization (html, neuroglancer)</li>
+</ul>
+</dd>
+</dl>
 </li>
-<li><p class="first">Project managment
-* Create a new conda env for each project</p>
+<li><dl class="first docutils">
+<dt>Project managment</dt>
+<dd><ul class="first last simple">
+<li>Create a new conda env for each project</li>
+</ul>
+</dd>
+</dl>
 </li>
-<li><p class="first">Unix Tips
-* Terminal (split screen)</p>
-<blockquote>
-<div><ul class="simple">
+<li><dl class="first docutils">
+<dt>Unix Tips</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Terminal (split screen)</dt>
+<dd><ul class="first last simple">
 <li>On mac: try <cite>iterm2</cite></li>
 <li>On Linux: try <cite>terminator</cite> or <cite>tmux</cite></li>
 </ul>
-</div></blockquote>
-<ul>
-<li><p class="first">ssh
-+ Automatic login in new bashes (after the login in a bash)</p>
-<blockquote>
-<div><ul>
-<li><p class="first">Create a file with the following content: <cite>vim ~/.ssh/config</cite>
-<a href="#id1"><span class="problematic" id="id2">``</span></a>`
-Host *</p>
-<blockquote>
-<div><p>ControlMaster auto
-ControlPath <a class="reference external" href="mailto:~/&#46;ssh/master-%r&#37;&#52;&#48;%h">~/<span>&#46;</span>ssh/master-%r<span>&#64;</span>%h</a>:%p</p>
-</div></blockquote>
-<p><a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id5"><span class="problematic" id="id6">`</span></a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>ssh</dt>
+<dd><ul class="first last">
+<li><p class="first">Automatic login in new bashes (after the login in a bash)</p>
+</li>
+<li><dl class="first docutils">
+<dt>Create a file with the following content: <code class="docutils literal notranslate"><span class="pre">vim</span> <span class="pre">~/.ssh/config</span></code></dt>
+<dd><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Host</span> <span class="o">*</span>
+  <span class="n">ControlMaster</span> <span class="n">auto</span>
+  <span class="n">ControlPath</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">master</span><span class="o">-%</span><span class="n">r</span><span class="o">@%</span><span class="n">h</span><span class="p">:</span><span class="o">%</span><span class="n">p</span>
+</pre></div>
+</div>
+</dd>
+</dl>
 </li>
 </ul>
-</div></blockquote>
+</dd>
+</dl>
 </li>
-<li><p class="first">bash
-+ Add useful alias: <cite>vim ~/.bashrc</cite></p>
-<blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">`</span>
-<span class="pre">alias</span> <span class="pre">csh='ssh</span> <span class="pre">${USERNAME}&#64;login.rc.fas.harvard.edu'</span>
-<span class="pre">`</span></code></p>
-</div></blockquote>
+<li><dl class="first docutils">
+<dt>bash</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Add useful alias: <cite>vim ~/.bashrc</cite></dt>
+<dd><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alias</span> <span class="n">csh</span><span class="o">=</span><span class="s1">&#39;ssh $</span><span class="si">{USERNAME}</span><span class="s1">@login.rc.fas.harvard.edu&#39;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
 </li>
 </ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
 </li>
 </ul>
 </div>
