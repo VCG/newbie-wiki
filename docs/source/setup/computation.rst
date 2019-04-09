@@ -4,8 +4,9 @@ Computation
 Harvard RC server (+coxfs/coxgpu)
 -------------------------------------------
 - Get account (with SEAS account):
-  * RC account `link <https://www.rc.fas.harvard.edu/resources/access-and-login/>`
-  * coxfs01 access `link <https://portal.rc.fas.harvard.edu/login/?next=/request/grants/add%3Fsearch%3Dcox_lab>`
+  * RC account `link <https://www.rc.fas.harvard.edu/resources/access-and-login/>`_.
+
+  * coxfs01 access `link <https://portal.rc.fas.harvard.edu/login/?next=/request/grants/add%3Fsearch%3Dcox_lab>`_.
 - Mount coxfs01 file system to local machine
   * Install packages: ``sudo apt-get install cifs-utils``
   * Get your gid on your local machine: ``id``
@@ -14,7 +15,7 @@ Harvard RC server (+coxfs/coxgpu)
     sudo mount -t cifs -o vers=1.0,workgroup=rc,username=${1},gid=${2} \
     //coxfs01.rc.fas.harvard.edu/coxfs01 /mnt/coxfs01
     ``
-- Submit jobs through slurm scheduler _official tutorial: https://www.rc.fas.harvard.edu/resources/running-jobs/
+- Submit jobs through slurm scheduler `official tutorial <https://www.rc.fas.harvard.edu/resources/running-jobs/>`_.
   * Get an interactive shell for debug: (${1}: memory in MB, ${2}: # of CPUs, ${3}: # of GPUs)
     + CPU: ``srun --pty -p cox -t 7-00:00 --mem ${1} -n ${2} /bin/bash``
     + GPU: ``srun --pty -p cox -t 7-00:00 --mem ${1} -n ${2} --gres=gpu:${3} /bin/bash``

@@ -186,8 +186,10 @@
 <h2>Harvard RC server (+coxfs/coxgpu)<a class="headerlink" href="#harvard-rc-server-coxfs-coxgpu" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first">Get account (with SEAS account):
-* RC account <cite>link &lt;https://www.rc.fas.harvard.edu/resources/access-and-login/&gt;</cite>
-* coxfs01 access <cite>link &lt;https://portal.rc.fas.harvard.edu/login/?next=/request/grants/add%3Fsearch%3Dcox_lab&gt;</cite></p>
+* RC account <a class="reference external" href="https://www.rc.fas.harvard.edu/resources/access-and-login/">link</a>.</p>
+<ul class="simple">
+<li>coxfs01 access <a class="reference external" href="https://portal.rc.fas.harvard.edu/login/?next=/request/grants/add%3Fsearch%3Dcox_lab">link</a>.</li>
+</ul>
 </li>
 <li><p class="first">Mount coxfs01 file system to local machine
 * Install packages: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">cifs-utils</span></code>
@@ -199,7 +201,7 @@ sudo mount -t cifs -o vers=1.0,workgroup=rc,username=${1},gid=${2} //coxfs01.rc.
 ``</p>
 </div></blockquote>
 </li>
-<li><p class="first">Submit jobs through slurm scheduler _official tutorial: <a class="reference external" href="https://www.rc.fas.harvard.edu/resources/running-jobs/">https://www.rc.fas.harvard.edu/resources/running-jobs/</a>
+<li><p class="first">Submit jobs through slurm scheduler <a class="reference external" href="https://www.rc.fas.harvard.edu/resources/running-jobs/">official tutorial</a>.
 * Get an interactive shell for debug: (${1}: memory in MB, ${2}: # of CPUs, ${3}: # of GPUs)</p>
 <blockquote>
 <div><ul class="simple">
