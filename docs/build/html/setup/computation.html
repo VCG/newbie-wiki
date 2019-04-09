@@ -215,8 +215,9 @@
 <dt>Submit jobs through slurm scheduler <a class="reference external" href="https://www.rc.fas.harvard.edu/resources/running-jobs/">official tutorial</a>.</dt>
 <dd><ul class="first last simple">
 <li><dl class="first docutils">
-<dt>Get an interactive shell for debug: (${1}: memory in MB, ${2}: # of CPUs, ${3}: # of GPUs)</dt>
+<dt>Get an interactive shell for debug</dt>
 <dd><ul class="first last">
+<li>(${1}: memory in MB, ${2}: # of CPUs, ${3}: # of GPUs)</li>
 <li>CPU: <code class="docutils literal notranslate"><span class="pre">srun</span> <span class="pre">--pty</span> <span class="pre">-p</span> <span class="pre">cox</span> <span class="pre">-t</span> <span class="pre">7-00:00</span> <span class="pre">--mem</span> <span class="pre">${1}</span> <span class="pre">-n</span> <span class="pre">${2}</span> <span class="pre">/bin/bash</span></code></li>
 <li>GPU: <code class="docutils literal notranslate"><span class="pre">srun</span> <span class="pre">--pty</span> <span class="pre">-p</span> <span class="pre">cox</span> <span class="pre">-t</span> <span class="pre">7-00:00</span> <span class="pre">--mem</span> <span class="pre">${1}</span> <span class="pre">-n</span> <span class="pre">${2}</span> <span class="pre">--gres=gpu:${3}</span> <span class="pre">/bin/bash</span></code></li>
 </ul>
@@ -253,7 +254,7 @@
 </dl>
 </li>
 <li>On local machine: <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-L</span> <span class="pre">p1:localhost:p2</span> <span class="pre">xx&#64;login.rc.fas.harvard.edu</span></code></li>
-<li>On rc login server: <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-L</span> <span class="pre">p2:localhost:p2</span> <span class="pre">M1</span></code></li>
+<li>On rc login server: <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-L</span> <span class="pre">p2:localhost:p2</span> <span class="pre">m1</span></code></li>
 </ul>
 </dd>
 </dl>

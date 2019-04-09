@@ -15,7 +15,8 @@ Harvard RC server (+coxfs/coxgpu)
         sudo mount -t cifs -o vers=1.0,workgroup=rc,username=${1},gid=${2} \
         //coxfs01.rc.fas.harvard.edu/coxfs01 /mnt/coxfs01
 - Submit jobs through slurm scheduler `official tutorial <https://www.rc.fas.harvard.edu/resources/running-jobs/>`_.
-    * Get an interactive shell for debug: (${1}: memory in MB, ${2}: # of CPUs, ${3}: # of GPUs)
+    * Get an interactive shell for debug
+        + (${1}: memory in MB, ${2}: # of CPUs, ${3}: # of GPUs)
         + CPU: ``srun --pty -p cox -t 7-00:00 --mem ${1} -n ${2} /bin/bash``
         + GPU: ``srun --pty -p cox -t 7-00:00 --mem ${1} -n ${2} --gres=gpu:${3} /bin/bash``
     * Submit job in the background ``/n/coxfs01/donglai/ppl/public/example_slurm.py``
@@ -29,7 +30,7 @@ Harvard RC server (+coxfs/coxgpu)
         * p2: port on rc server
         * m1: coxgpu name, e.g. coxgpu06
     * On local machine: ``ssh -L p1:localhost:p2 xx@login.rc.fas.harvard.edu``
-    * On rc login server: ``ssh -L p2:localhost:p2 M1``
+    * On rc login server: ``ssh -L p2:localhost:p2 m1``
 
 Group server (hp03 machine)
 -------------------------------
