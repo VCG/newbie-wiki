@@ -214,9 +214,9 @@ sudo mount -t cifs -o vers=1.0,workgroup=rc,username=${1},gid=${2} //coxfs01.rc.
 <li>Deep learning env (python3/EM-network): <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/n/coxfs01/donglai/lib/miniconda2/bin/activate</span> <span class="pre">em-net</span></code></li>
 <li>ssh tunnel for port forwarding (e.g. tensorboard display)<ul>
 <li>Parameters:
-+ P1:port you want to display on localhost
-+ P2: port on rc server
-+ M1: coxgpu name, e.g. coxgpu06</li>
+# p1: port you want to display on localhost
+# P2: port on rc server
+# M1: coxgpu name, e.g. coxgpu06</li>
 <li>On local machine:
 <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-L</span> <span class="pre">p1:localhost:p2</span> <span class="pre">xx&#64;login.rc.fas.harvard.edu</span></code></li>
 <li>On rc login server: <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-L</span> <span class="pre">p2:localhost:p2</span> <span class="pre">M1</span></code></li>

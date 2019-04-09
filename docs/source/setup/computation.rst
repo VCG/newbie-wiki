@@ -38,9 +38,9 @@ Harvard RC server (+coxfs/coxgpu)
 - ssh tunnel for port forwarding (e.g. tensorboard display)
 
   * Parameters:
-    + P1:port you want to display on localhost
-    + P2: port on rc server
-    + M1: coxgpu name, e.g. coxgpu06
+    # p1: port you want to display on localhost
+    # P2: port on rc server
+    # M1: coxgpu name, e.g. coxgpu06
   * On local machine: 
     ``ssh -L p1:localhost:p2 xx@login.rc.fas.harvard.edu``
   * On rc login server: ``ssh -L p2:localhost:p2 M1``
