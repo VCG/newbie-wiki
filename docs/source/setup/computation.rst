@@ -55,7 +55,8 @@ Group server (hp03 machine)
 
   * `download <https://conda.io/en/latest/miniconda.html>`_.
 - cmds for neuroglancer
-  .. code-block :: bash
-  screen
-  source /home/donglai/miniconda2/bin/activate ng
-  python -i xxx.py
+  ::
+
+      screen
+      source /home/donglai/miniconda2/bin/activate ng
+      python -i xxx.py
