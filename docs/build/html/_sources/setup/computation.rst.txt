@@ -11,17 +11,21 @@ Harvard RC server (+coxfs/coxgpu)
   * Get your gid on your local machine: ``id``
   * Mount it with your rc username and local machine gid:  
     ``
-    sudo mount -t cifs -o vers=1.0,workgroup=rc,username=${1},gid=${2} //coxfs01.rc.fas.harvard.edu/coxfs01 /mnt/coxfs01
+    sudo mount -t cifs -o vers=1.0,workgroup=rc,username=${1},gid=${2} \
+    //coxfs01.rc.fas.harvard.edu/coxfs01 /mnt/coxfs01
     ``
-- Submit jobs through slurm scheduler `official tutorial <https://www.rc.fas.harvard.edu/resources/running-jobs/>`
+- Submit jobs through slurm scheduler _official tutorial: https://www.rc.fas.harvard.edu/resources/running-jobs/
   * Get an interactive shell for debug: (${1}: memory in MB, ${2}: # of CPUs, ${3}: # of GPUs)
     + CPU: ``srun --pty -p cox -t 7-00:00 --mem ${1} -n ${2} /bin/bash``
     + GPU: ``srun --pty -p cox -t 7-00:00 --mem ${1} -n ${2} --gres=gpu:${3} /bin/bash``
   * Submit job in the background:
-    + ``/n/coxfs01/donglai/ppl/public/example_slurm.py``
+    ``/n/coxfs01/donglai/ppl/public/example_slurm.py``
+
 - Setup CUDA env
   * Request a GPU machine (``srun`` or ``sbatch``)
+
   * Load cuda on rc cluster: ``module load cuda/9.0-fasrc02 cudnn/7.0_cuda9.0-fasrc01``
+
 - Deep learning env (python3/EM-network): ``source /n/coxfs01/donglai/lib/miniconda2/bin/activate em-net``
 - ssh tunnel for port forwarding (e.g. tensorboard display)
   * Parameters:

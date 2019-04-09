@@ -199,7 +199,7 @@ sudo mount -t cifs -o vers=1.0,workgroup=rc,username=${1},gid=${2} //coxfs01.rc.
 ``</p>
 </div></blockquote>
 </li>
-<li><p class="first">Submit jobs through slurm scheduler <cite>official tutorial &lt;https://www.rc.fas.harvard.edu/resources/running-jobs/&gt;</cite>
+<li><p class="first">Submit jobs through slurm scheduler _official tutorial: <a class="reference external" href="https://www.rc.fas.harvard.edu/resources/running-jobs/">https://www.rc.fas.harvard.edu/resources/running-jobs/</a>
 * Get an interactive shell for debug: (${1}: memory in MB, ${2}: # of CPUs, ${3}: # of GPUs)</p>
 <blockquote>
 <div><ul class="simple">
@@ -209,12 +209,14 @@ sudo mount -t cifs -o vers=1.0,workgroup=rc,username=${1},gid=${2} //coxfs01.rc.
 </div></blockquote>
 <ul class="simple">
 <li>Submit job in the background:
-+ <code class="docutils literal notranslate"><span class="pre">/n/coxfs01/donglai/ppl/public/example_slurm.py</span></code></li>
+<code class="docutils literal notranslate"><span class="pre">/n/coxfs01/donglai/ppl/public/example_slurm.py</span></code></li>
 </ul>
 </li>
 <li><p class="first">Setup CUDA env
-* Request a GPU machine (<code class="docutils literal notranslate"><span class="pre">srun</span></code> or <code class="docutils literal notranslate"><span class="pre">sbatch</span></code>)
-* Load cuda on rc cluster: <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">cuda/9.0-fasrc02</span> <span class="pre">cudnn/7.0_cuda9.0-fasrc01</span></code></p>
+* Request a GPU machine (<code class="docutils literal notranslate"><span class="pre">srun</span></code> or <code class="docutils literal notranslate"><span class="pre">sbatch</span></code>)</p>
+<ul class="simple">
+<li>Load cuda on rc cluster: <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">cuda/9.0-fasrc02</span> <span class="pre">cudnn/7.0_cuda9.0-fasrc01</span></code></li>
+</ul>
 </li>
 <li><p class="first">Deep learning env (python3/EM-network): <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/n/coxfs01/donglai/lib/miniconda2/bin/activate</span> <span class="pre">em-net</span></code></p>
 </li>
