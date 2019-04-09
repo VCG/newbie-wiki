@@ -4,8 +4,8 @@ Computation
 Harvard RC server (+coxfs/coxgpu)
 -------------------------------------------
 - Get account (with SEAS account)
-    * `RC account <https://www.rc.fas.harvard.edu/resources/access-and-login/>`_.
-    *  `coxfs01 access <https://portal.rc.fas.harvard.edu/login/?next=/request/grants/add%3Fsearch%3Dcox_lab>`_.
+    * `RC account <https://www.rc.fas.harvard.edu/resources/access-and-login/>`_
+    *  `coxfs01 access <https://portal.rc.fas.harvard.edu/login/?next=/request/grants/add%3Fsearch%3Dcox_lab>`_
 
 - Mount coxfs01 file system to local machine
     * Install packages: ``sudo apt-get install cifs-utils``
@@ -25,9 +25,9 @@ Harvard RC server (+coxfs/coxgpu)
 - Deep learning env (python3/EM-network): ``source /n/coxfs01/donglai/lib/miniconda2/bin/activate em-net``
 - ssh tunnel for port forwarding (e.g. tensorboard display)
     * Parameters:
-        # p1: port you want to display on localhost
-        # p2: port on rc server
-        # m1: coxgpu name, e.g. coxgpu06
+        * p1: port you want to display on localhost
+        * p2: port on rc server
+        * m1: coxgpu name, e.g. coxgpu06
     * On local machine: ``ssh -L p1:localhost:p2 xx@login.rc.fas.harvard.edu``
     * On rc login server: ``ssh -L p2:localhost:p2 M1``
 
