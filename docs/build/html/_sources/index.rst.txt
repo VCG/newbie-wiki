@@ -2,6 +2,7 @@ Welcome to Visual Computing Group
 ===========================================
 
 .. toctree::
+   :titlesonly:
    :glob:
    :maxdepth: 1
    :caption: Setup
@@ -23,3 +24,11 @@ Welcome to Visual Computing Group
    :caption: Code
    
    code/sample_code
+
+.. toctree::
+   :glob:
+   :maxdepth: 2
+   :caption: Tutorial
+   
+   tutorial/tutorial_install
+   tutorial/tutorial_snemi
