@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation &mdash; Intern-Wiki  documentation</title>
+  <title>Synapse &mdash; Intern-Wiki  documentation</title>
   
 
   
@@ -46,8 +46,7 @@
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Segmentation" href="tutorial_seg.html" />
-    <link rel="prev" title="Code" href="../code/sample_code.html" /> 
+    <link rel="prev" title="Segmentation" href="tutorial_seg.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -110,13 +109,13 @@
 </ul>
 <p class="caption"><span class="caption-text">Tutorial</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_seg.html">Segmentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorial_seg.html#snemi3d">SNEMI3D</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_syn.html">Synapse</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorial_syn.html#cremi">CREMI</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Synapse</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cremi">CREMI</a></li>
 </ul>
 </li>
 </ul>
@@ -164,13 +163,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Installation</li>
+      <li>Synapse</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/tutorial/tutorial_install.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/tutorial/tutorial_syn.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -183,37 +182,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>Our software packages are developed in python on Linux machines. Below is the
-machine setup.</p>
-<ul class="simple">
+  <div class="section" id="synapse">
+<h1>Synapse<a class="headerlink" href="#synapse" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="cremi">
+<h2>CREMI<a class="headerlink" href="#cremi" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
 <li><dl class="first docutils">
-<dt>OS</dt>
-<dd><ul class="first last">
-<li>Unix-based OS (e.g. Linux, Mac OS X).</li>
-<li>“<em>Recommendation</em>”: <a class="reference external" href="https://www.ubuntu.com/download/desktop">Ubuntu LTS</a></li>
-</ul>
+<dt>Download Data</dt>
+<dd><dl class="first last docutils">
+<dt>::</dt>
+<dd>wget <a class="reference external" href="http://140.247.107.75/rhoana_product/snemi/image/train-input.tif">http://140.247.107.75/rhoana_product/snemi/image/train-input.tif</a>
+wget <a class="reference external" href="http://140.247.107.75/rhoana_product/snemi/seg/train-labels.tif">http://140.247.107.75/rhoana_product/snemi/seg/train-labels.tif</a>
+wget <a class="reference external" href="http://140.247.107.75/rhoana_product/snemi/image/test-input.tif">http://140.247.107.75/rhoana_product/snemi/image/test-input.tif</a></dd>
+</dl>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Package manager (Python)</dt>
+<dt>Computation</dt>
 <dd><ul class="first last">
-<li><a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a></li>
+<li>image re-alignment</li>
+<li>image deflicker</li>
+<li>cleft segmentation training and inference</li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>Rhoana package</dt>
-<dd><ul class="first last">
-<li><a class="reference external" href="http://caffe.berkeleyvision.org/tutorial/">Installation guide</a></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
+<li>Visualization</li>
+</ol>
+</div>
 </div>
 
 
@@ -224,10 +221,8 @@ machine setup.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tutorial_seg.html" class="btn btn-neutral float-right" title="Segmentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="../code/sample_code.html" class="btn btn-neutral float-left" title="Code" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tutorial_seg.html" class="btn btn-neutral float-left" title="Segmentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

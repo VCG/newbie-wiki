@@ -31,4 +31,5 @@ Welcome to Visual Computing Group
    :caption: Tutorial
    
    tutorial/tutorial_install
-   tutorial/tutorial_snemi
+   tutorial/tutorial_seg
+   tutorial/tutorial_syn
