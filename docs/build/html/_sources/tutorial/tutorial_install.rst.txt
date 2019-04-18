@@ -1,11 +1,11 @@
 Installation
 =============
-Our software packages are developed in python on Linux machines. Below is the
-machine setup.
+Our software packages are developed mainly in python on Linux machines.
+For deep learning related functionality, GPUs are required for speed.
 
 - OS
     - Unix-based OS (e.g. Linux, Mac OS X). 
-    - "*Recommendation*": `Ubuntu LTS <https://www.ubuntu.com/download/desktop>`_
+    - *Recommendation*: `Ubuntu LTS <https://www.ubuntu.com/download/desktop>`_
 - Package manager (Python)
     - `Miniconda <https://docs.conda.io/en/latest/miniconda.html>`_
 
