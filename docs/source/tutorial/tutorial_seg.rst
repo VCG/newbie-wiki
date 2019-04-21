@@ -13,27 +13,27 @@ SNEMI3D
 
 2. Computation
     - Image Deflicker
-        = Install `EM-preprocess <https://github.com/donglaiw/EM-preprocess>`_
-        = Usage
-        .. code-block:: python
-       
-            from em_pre.deflicker import deflicker_online
-            import tifffile
+        - Install `EM-preprocess <https://github.com/donglaiw/EM-preprocess>`_
+        - Usage
+            .. code-block:: python
+           
+                from em_pre.deflicker import deflicker_online
+                import tifffile
 
-            ims = tifffile.imread('train-input.tif')
-            def getN(i):
-                return ims[i]
-            result = deflicker_online(getN, opts=[0,0,0], globalStat=[150,-1], filterS_hsz=[15,15], filterT_hsz=2)
+                ims = tifffile.imread('train-input.tif')
+                def getN(i):
+                    return ims[i]
+                result = deflicker_online(getN, opts=[0,0,0], globalStat=[150,-1], filterS_hsz=[15,15], filterT_hsz=2)
 
     - Affinity Training and Inference
-        = TBD
+        - TBD
     - 3D Segmentation
-        = Install `waterz <https://github.com/donglaiw/waterz>`_
-        = Download affinity result 
-        ::
+        - Install `waterz <https://github.com/donglaiw/waterz>`_
+        - Download affinity result 
+            ::
 
-            wget http://140.247.107.75/rhoana_product/snemi/aff/model_snemi_dice_mls._train_min.h5
-        = Usage
+                wget http://140.247.107.75/rhoana_product/snemi/aff/model_snemi_dice_mls._train_min.h5
+        - Usage
             .. code-block:: python
 
                 import waterz
@@ -48,8 +48,8 @@ SNEMI3D
                                 aff_threshold=aff_thresholds)
 
 3. Visualization
-    - Install backend: `pip install neuroglancer` 
-    - Install frontend: `README.md <https://github.com/google/neuroglancer#building>`_
+    - Install python back-end: `pip install neuroglancer` 
+    - Install NodeJS front-end: `README.md <https://github.com/google/neuroglancer#building>`_
     - Usage: run on ipython/jupyter notebook or `python -i THIS_FILE.py`
         .. code-block:: python
             

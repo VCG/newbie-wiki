@@ -203,37 +203,50 @@
 <dd><ul class="first last">
 <li><dl class="first docutils">
 <dt>Image Deflicker</dt>
-<dd><p class="first">= Install <a class="reference external" href="https://github.com/donglaiw/EM-preprocess">EM-preprocess</a>
-= Usage
-.. code-block:: python</p>
-<blockquote class="last">
-<div><p>from em_pre.deflicker import deflicker_online
-import tifffile</p>
-<p>ims = tifffile.imread(‘train-input.tif’)
-def getN(i):</p>
-<blockquote>
-<div><p>return ims[i]</p>
-</div></blockquote>
-<p>result = deflicker_online(getN, opts=[0,0,0], globalStat=[150,-1], filterS_hsz=[15,15], filterT_hsz=2)</p>
-</div></blockquote>
+<dd><ul class="first last">
+<li><p class="first">Install <a class="reference external" href="https://github.com/donglaiw/EM-preprocess">EM-preprocess</a></p>
+</li>
+<li><dl class="first docutils">
+<dt>Usage</dt>
+<dd><div class="first last highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">em_pre.deflicker</span> <span class="kn">import</span> <span class="n">deflicker_online</span>
+<span class="kn">import</span> <span class="nn">tifffile</span>
+
+<span class="n">ims</span> <span class="o">=</span> <span class="n">tifffile</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;train-input.tif&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">getN</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">ims</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">deflicker_online</span><span class="p">(</span><span class="n">getN</span><span class="p">,</span> <span class="n">opts</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">globalStat</span><span class="o">=</span><span class="p">[</span><span class="mi">150</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">filterS_hsz</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span> <span class="n">filterT_hsz</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>Affinity Training and Inference</dt>
-<dd><p class="first last">= TBD</p>
+<dd><ul class="first last simple">
+<li>TBD</li>
+</ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>3D Segmentation</dt>
-<dd><p class="first">= Install <a class="reference external" href="https://github.com/donglaiw/waterz">waterz</a>
-= Download affinity result</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">140.247</span><span class="o">.</span><span class="mf">107.75</span><span class="o">/</span><span class="n">rhoana_product</span><span class="o">/</span><span class="n">snemi</span><span class="o">/</span><span class="n">aff</span><span class="o">/</span><span class="n">model_snemi_dice_mls</span><span class="o">.</span><span class="n">_train_min</span><span class="o">.</span><span class="n">h5</span>
+<dd><ul class="first last">
+<li><p class="first">Install <a class="reference external" href="https://github.com/donglaiw/waterz">waterz</a></p>
+</li>
+<li><dl class="first docutils">
+<dt>Download affinity result</dt>
+<dd><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">140.247</span><span class="o">.</span><span class="mf">107.75</span><span class="o">/</span><span class="n">rhoana_product</span><span class="o">/</span><span class="n">snemi</span><span class="o">/</span><span class="n">aff</span><span class="o">/</span><span class="n">model_snemi_dice_mls</span><span class="o">.</span><span class="n">_train_min</span><span class="o">.</span><span class="n">h5</span>
 </pre></div>
 </div>
-<dl class="last docutils">
-<dt>= Usage</dt>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Usage</dt>
 <dd><div class="first last highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">waterz</span>
 <span class="kn">import</span> <span class="nn">h5py</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -248,6 +261,8 @@ def getN(i):</p>
 </div>
 </dd>
 </dl>
+</li>
+</ul>
 </dd>
 </dl>
 </li>
@@ -258,9 +273,9 @@ def getN(i):</p>
 <li><dl class="first docutils">
 <dt>Visualization</dt>
 <dd><ul class="first last">
-<li><p class="first">Install backend: <cite>pip install neuroglancer</cite></p>
+<li><p class="first">Install python back-end: <cite>pip install neuroglancer</cite></p>
 </li>
-<li><p class="first">Install frontend: <a class="reference external" href="https://github.com/google/neuroglancer#building">README.md</a></p>
+<li><p class="first">Install NodeJS front-end: <a class="reference external" href="https://github.com/google/neuroglancer#building">README.md</a></p>
 </li>
 <li><dl class="first docutils">
 <dt>Usage: run on ipython/jupyter notebook or <cite>python -i THIS_FILE.py</cite></dt>
