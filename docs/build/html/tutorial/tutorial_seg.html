@@ -200,15 +200,111 @@
 </li>
 <li><dl class="first docutils">
 <dt>Computation</dt>
-<dd><ul class="first last simple">
-<li>image deflicker</li>
-<li>affinity training and inference</li>
-<li>3D segmentation</li>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Image Deflicker</dt>
+<dd><p class="first">= Install <a class="reference external" href="https://github.com/donglaiw/EM-preprocess">EM-preprocess</a>
+= Usage
+.. code-block:: python</p>
+<blockquote class="last">
+<div><p>from em_pre.deflicker import deflicker_online
+import tifffile</p>
+<p>ims = tifffile.imread(‘train-input.tif’)
+def getN(i):</p>
+<blockquote>
+<div><p>return ims[i]</p>
+</div></blockquote>
+<p>result = deflicker_online(getN, opts=[0,0,0], globalStat=[150,-1], filterS_hsz=[15,15], filterT_hsz=2)</p>
+</div></blockquote>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Affinity Training and Inference</dt>
+<dd><p class="first last">= TBD</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>3D Segmentation</dt>
+<dd><p class="first">= Install <a class="reference external" href="https://github.com/donglaiw/waterz">waterz</a>
+= Download affinity result</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">140.247</span><span class="o">.</span><span class="mf">107.75</span><span class="o">/</span><span class="n">rhoana_product</span><span class="o">/</span><span class="n">snemi</span><span class="o">/</span><span class="n">aff</span><span class="o">/</span><span class="n">model_snemi_dice_mls</span><span class="o">.</span><span class="n">_train_min</span><span class="o">.</span><span class="n">h5</span>
+</pre></div>
+</div>
+<dl class="last docutils">
+<dt>= Usage</dt>
+<dd><div class="first last highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">waterz</span>
+<span class="kn">import</span> <span class="nn">h5py</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="n">aff_thresholds</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.005</span><span class="p">,</span> <span class="mf">0.995</span><span class="p">]</span>
+<span class="n">seg_thresholds</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">]</span>
+<span class="n">aff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="s1">&#39;model_snemi_dice_mls._train_min.h5&#39;</span><span class="p">)[</span><span class="s1">&#39;main&#39;</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">waterz</span><span class="o">.</span><span class="n">waterz</span><span class="p">(</span><span class="n">aff</span><span class="p">,</span> <span class="n">seg_thresholds</span><span class="p">,</span>
+                <span class="n">merge_function</span><span class="o">=</span><span class="s1">&#39;aff85_his256&#39;</span><span class="p">,</span>
+                <span class="n">aff_threshold</span><span class="o">=</span><span class="n">aff_thresholds</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><p class="first">Visualization</p>
+<li><dl class="first docutils">
+<dt>Visualization</dt>
+<dd><ul class="first last">
+<li><p class="first">Install backend: <cite>pip install neuroglancer</cite></p>
+</li>
+<li><p class="first">Install frontend: <a class="reference external" href="https://github.com/google/neuroglancer#building">README.md</a></p>
+</li>
+<li><dl class="first docutils">
+<dt>Usage: run on ipython/jupyter notebook or <cite>python -i THIS_FILE.py</cite></dt>
+<dd><div class="first last highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">neuroglancer</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">tifffile</span>
+
+<span class="n">ip</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span> <span class="c1"># or public IP of the machine for sharable display</span>
+<span class="n">port</span><span class="o">=</span><span class="mi">98092</span> <span class="c1"># change to an unused port number</span>
+<span class="n">neuroglancer</span><span class="o">.</span><span class="n">set_server_bind_address</span><span class="p">(</span><span class="n">bind_address</span><span class="o">=</span><span class="n">ip</span><span class="p">,</span><span class="n">bind_port</span><span class="o">=</span><span class="n">port</span><span class="p">)</span>
+<span class="n">viewer</span><span class="o">=</span><span class="n">neuroglancer</span><span class="o">.</span><span class="n">Viewer</span><span class="p">()</span>
+
+<span class="c1"># SNEMI</span>
+<span class="n">res</span><span class="o">=</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">30</span><span class="p">];</span> <span class="c1"># resolution of the data</span>
+<span class="k">print</span> <span class="s1">&#39;load im&#39;</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">tifffile</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;train-input.tif&#39;</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">viewer</span><span class="o">.</span><span class="n">txn</span><span class="p">()</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;im&#39;</span><span class="p">,</span>
+        <span class="n">layer</span><span class="o">=</span><span class="n">neuroglancer</span><span class="o">.</span><span class="n">LocalVolume</span><span class="p">(</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">im</span><span class="p">,</span>
+            <span class="n">voxel_size</span><span class="o">=</span><span class="n">res</span>
+        <span class="p">))</span>
+
+<span class="k">print</span> <span class="s1">&#39;load gt&#39;</span>
+<span class="n">gt</span> <span class="o">=</span> <span class="n">tifffile</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">DD</span><span class="o">+</span><span class="s1">&#39;train-labels.tif&#39;</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">viewer</span><span class="o">.</span><span class="n">txn</span><span class="p">()</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;gt&#39;</span><span class="p">,</span>
+        <span class="n">layer</span><span class="o">=</span><span class="n">neuroglancer</span><span class="o">.</span><span class="n">LocalVolume</span><span class="p">(</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">gt</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">),</span>
+            <span class="n">voxel_size</span><span class="o">=</span><span class="n">res</span>
+        <span class="p">))</span>
+
+<span class="k">print</span> <span class="n">viewer</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
 </li>
 </ol>
 </div>
@@ -234,7 +330,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, VCG
+        &copy; Copyright 2019, VCG, Harvard University
 
     </p>
   </div>

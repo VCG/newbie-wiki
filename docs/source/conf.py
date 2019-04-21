@@ -15,7 +15,7 @@ extensions = [
 source_suffix = '.rst'
 master_doc = 'index'
 
-author = 'VCG'
+author = 'VCG, Harvard University'
 project = 'Intern-Wiki'
 copyright = '{}, {}'.format(datetime.datetime.now().year, author)
 
