@@ -14,4 +14,4 @@ alpha/
 !docs/build/
 !docs/build/html/_modules/torch_geometric/data/
 
-.sw*
+*.sw*
