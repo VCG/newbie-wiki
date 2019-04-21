@@ -42,13 +42,16 @@ SNEMI3D
 
                 aff_thresholds = [0.005, 0.995]
                 seg_thresholds = [0.1, 0.3, 0.6]
-                aff = np.array(h5py.File('model_snemi_dice_mls._train_min.h5')['main'])
+                aff = np.array(h5py.File('model_snemi_dice_mls._train_min.h5','r')['main'])
                 result = waterz.waterz(aff, seg_thresholds,
                                 merge_function='aff85_his256',
                                 aff_threshold=aff_thresholds)
 
 3. Visualization
-    - Install python back-end: `pip install neuroglancer` 
+    - Install python back-end
+        :: 
+      
+            pip install neuroglancer
     - Install NodeJS front-end: `README.md <https://github.com/google/neuroglancer#building>`_
     - Usage: run on ipython/jupyter notebook or `python -i THIS_FILE.py`
         .. code-block:: python
@@ -76,7 +79,7 @@ SNEMI3D
                     ))
 
             print 'load gt'
-            gt = tifffile.imread(DD+'train-labels.tif')
+            gt = tifffile.imread('train-labels.tif')
             with viewer.txn() as s:
                 s.layers.append(
                     name='gt',
