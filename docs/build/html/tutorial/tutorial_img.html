@@ -45,9 +45,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Synapse" href="tutorial_syn.html" />
-    <link rel="prev" title="Installation" href="tutorial_install.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -109,10 +107,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../code/sample_code.html">Code</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Tutorial</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_install.html">Installation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Segmentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#snemi3d">SNEMI3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_seg.html">Segmentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_seg.html#snemi3d">SNEMI3D</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_syn.html">Synapse</a><ul>
@@ -170,7 +168,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/tutorial/tutorial_seg.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/tutorial/tutorial_img.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -197,19 +195,42 @@ wget http://140.247.107.75/rhoana_product/snemi/image/test-input.tif
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Computation</p>
+<li><dl class="first docutils">
+<dt>Computation</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Image Deflicker</dt>
+<dd><ul class="first last">
+<li><p class="first">Install <a class="reference external" href="https://github.com/donglaiw/EM-preprocess">EM-preprocess</a></p>
+</li>
+<li><p class="first">Usage</p>
 <blockquote>
-<div><ol class="arabic">
-<li><p class="first">Image -&gt; Affinity</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li>Install <a class="reference external" href="https://zudi-lin.github.io/pytorch_connectomics/build/html/tutorials/snemi.html">pytorch_connectomics</a></li>
-</ol>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">em_pre.deflicker</span> <span class="kn">import</span> <span class="n">deflicker_online</span>
+<span class="kn">import</span> <span class="nn">tifffile</span>
+
+<span class="n">ims</span> <span class="o">=</span> <span class="n">tifffile</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;train-input.tif&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">getN</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">ims</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">deflicker_online</span><span class="p">(</span><span class="n">getN</span><span class="p">,</span> <span class="n">opts</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">globalStat</span><span class="o">=</span><span class="p">[</span><span class="mi">150</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">filterS_hsz</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span> <span class="n">filterT_hsz</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
 </div></blockquote>
 </li>
-<li><p class="first">Affinity -&gt; 3D Segmentation</p>
-<blockquote>
-<div><ol class="arabic">
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Affinity Training and Inference</dt>
+<dd><ul class="first last simple">
+<li>TBD</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>3D Segmentation</dt>
+<dd><ul class="first last">
 <li><p class="first">Install <a class="reference external" href="https://github.com/donglaiw/waterz">waterz</a></p>
 </li>
 <li><p class="first">Download affinity result</p>
@@ -235,14 +256,17 @@ wget http://140.247.107.75/rhoana_product/snemi/image/test-input.tif
 </div>
 </div></blockquote>
 </li>
-</ol>
-</div></blockquote>
+</ul>
+</dd>
+</dl>
 </li>
-</ol>
-</div></blockquote>
+</ul>
+</dd>
+</dl>
 </li>
-<li><p class="first">Visualization</p>
-<ol class="arabic">
+<li><dl class="first docutils">
+<dt>Visualization</dt>
+<dd><ul class="first last">
 <li><p class="first">Install python back-end</p>
 <blockquote>
 <div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install neuroglancer
@@ -250,9 +274,6 @@ wget http://140.247.107.75/rhoana_product/snemi/image/test-input.tif
 </div>
 </div></blockquote>
 </li>
-</ol>
-<blockquote>
-<div><ol class="arabic">
 <li><p class="first">Install NodeJS front-end: <a class="reference external" href="https://github.com/google/neuroglancer#building">README.md</a></p>
 </li>
 <li><p class="first">Usage: run on ipython/jupyter notebook or <cite>python -i THIS_FILE.py</cite></p>
@@ -294,8 +315,9 @@ wget http://140.247.107.75/rhoana_product/snemi/image/test-input.tif
 </div>
 </div></blockquote>
 </li>
-</ol>
-</div></blockquote>
+</ul>
+</dd>
+</dl>
 </li>
 </ol>
 </div>
@@ -306,15 +328,6 @@ wget http://140.247.107.75/rhoana_product/snemi/image/test-input.tif
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="tutorial_syn.html" class="btn btn-neutral float-right" title="Synapse" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="tutorial_install.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

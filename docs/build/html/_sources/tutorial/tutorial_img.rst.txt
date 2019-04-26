@@ -4,7 +4,7 @@ Segmentation
 SNEMI3D
 ------------------
 
-#. Download Data
+1. Download Data
 
     .. code-block:: none
 
@@ -12,23 +12,31 @@ SNEMI3D
         wget http://140.247.107.75/rhoana_product/snemi/seg/train-labels.tif
         wget http://140.247.107.75/rhoana_product/snemi/image/test-input.tif
 
-#. Computation
+2. Computation
+    - Image Deflicker
+        - Install `EM-preprocess <https://github.com/donglaiw/EM-preprocess>`_
+        - Usage
 
-    #. Image -> Affinity
+            .. code-block:: python
+           
+                from em_pre.deflicker import deflicker_online
+                import tifffile
 
-        #. Install `pytorch_connectomics <https://zudi-lin.github.io/pytorch_connectomics/build/html/tutorials/snemi.html>`_
+                ims = tifffile.imread('train-input.tif')
+                def getN(i):
+                    return ims[i]
+                result = deflicker_online(getN, opts=[0,0,0], globalStat=[150,-1], filterS_hsz=[15,15], filterT_hsz=2)
 
-    #. Affinity -> 3D Segmentation
-        
-        #. Install `waterz <https://github.com/donglaiw/waterz>`_
-        
-        #. Download affinity result 
+    - Affinity Training and Inference
+        - TBD
+    - 3D Segmentation
+        - Install `waterz <https://github.com/donglaiw/waterz>`_
+        - Download affinity result 
 
             .. code-block:: none
             
                 wget http://140.247.107.75/rhoana_product/snemi/aff/model_snemi_dice_mls._train_min.h5
-
-        #. Usage
+        - Usage
 
             .. code-block:: python
 
@@ -43,17 +51,15 @@ SNEMI3D
                                 merge_function='aff85_his256',
                                 aff_threshold=aff_thresholds)
 
-#. Visualization
-    
-   #. Install python back-end
+3. Visualization
+    - Install python back-end
         
         .. code-block:: none 
-
+      
             pip install neuroglancer
 
-    #. Install NodeJS front-end: `README.md <https://github.com/google/neuroglancer#building>`_
-
-    #. Usage: run on ipython/jupyter notebook or `python -i THIS_FILE.py`
+    - Install NodeJS front-end: `README.md <https://github.com/google/neuroglancer#building>`_
+    - Usage: run on ipython/jupyter notebook or `python -i THIS_FILE.py`
 
         .. code-block:: python
             
