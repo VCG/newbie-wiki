@@ -16,7 +16,7 @@ Welcome to Visual Computing Group
    :maxdepth: 1
    :caption: Data
    
-   data/data_point
+   data/connectomics
 
 .. toctree::
    :glob:
@@ -31,7 +31,6 @@ Welcome to Visual Computing Group
    :caption: Tutorial
    
    tutorial/tutorial_install
-   tutorial/tutorial_data
    tutorial/tutorial_img
    tutorial/tutorial_seg
    tutorial/tutorial_syn

@@ -1,8 +1,8 @@
-Segmentation
-=============
+Connectomics Segmentation
+==========================
 
-SNEMI3D
-------------------
+SNEMI3D: Neuron
+---------------------
 
 #. Computation
 
@@ -82,3 +82,5 @@ SNEMI3D
                     ))
 
             print viewer
+
+#. Evaluation

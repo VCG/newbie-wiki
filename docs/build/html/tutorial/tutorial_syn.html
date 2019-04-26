@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Synapse &mdash; Intern-Wiki  documentation</title>
+  <title>Connectomics Synapse &mdash; Intern-Wiki  documentation</title>
   
 
   
@@ -46,7 +46,7 @@
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Segmentation" href="tutorial_seg.html" /> 
+    <link rel="prev" title="Connectomics Segmentation" href="tutorial_seg.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -101,7 +101,10 @@
 </ul>
 <p class="caption"><span class="caption-text">Data</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../data/data_point.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/connectomics.html">Connectomics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data/connectomics.html#snemi3d">SNEMI3D</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Code</span></p>
 <ul>
@@ -110,11 +113,15 @@
 <p class="caption"><span class="caption-text">Tutorial</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="tutorial_install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_seg.html">Segmentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorial_seg.html#snemi3d">SNEMI3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_img.html">Image Preprocess</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_img.html#image-deflicker">Image Deflicker</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Synapse</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_seg.html">Connectomics Segmentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_seg.html#snemi3d-neuron">SNEMI3D: Neuron</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Connectomics Synapse</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#cremi">CREMI</a></li>
 </ul>
 </li>
@@ -163,7 +170,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Synapse</li>
+      <li>Connectomics Synapse</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -182,33 +189,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="synapse">
-<h1>Synapse<a class="headerlink" href="#synapse" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="connectomics-synapse">
+<h1>Connectomics Synapse<a class="headerlink" href="#connectomics-synapse" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="cremi">
 <h2>CREMI<a class="headerlink" href="#cremi" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><dl class="first docutils">
-<dt>Download Data</dt>
-<dd><dl class="first last docutils">
-<dt>::</dt>
-<dd>wget <a class="reference external" href="http://140.247.107.75/rhoana_product/snemi/image/train-input.tif">http://140.247.107.75/rhoana_product/snemi/image/train-input.tif</a>
-wget <a class="reference external" href="http://140.247.107.75/rhoana_product/snemi/seg/train-labels.tif">http://140.247.107.75/rhoana_product/snemi/seg/train-labels.tif</a>
-wget <a class="reference external" href="http://140.247.107.75/rhoana_product/snemi/image/test-input.tif">http://140.247.107.75/rhoana_product/snemi/image/test-input.tif</a></dd>
-</dl>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Computation</dt>
-<dd><ul class="first last">
-<li>image re-alignment</li>
-<li>image deflicker</li>
+<li>Computation<ol class="arabic">
 <li>cleft segmentation training and inference</li>
-</ul>
-</dd>
-</dl>
+</ol>
 </li>
 <li>Visualization</li>
+<li>Evaluation</li>
 </ol>
 </div>
 </div>
@@ -222,7 +213,7 @@ wget <a class="reference external" href="http://140.247.107.75/rhoana_product/sn
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="tutorial_seg.html" class="btn btn-neutral float-left" title="Segmentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tutorial_seg.html" class="btn btn-neutral float-left" title="Connectomics Segmentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
