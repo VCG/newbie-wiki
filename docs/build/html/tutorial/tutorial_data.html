@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Image Preprocess &mdash; Intern-Wiki  documentation</title>
+  <title>Dataset &mdash; Intern-Wiki  documentation</title>
   
 
   
@@ -46,8 +46,8 @@
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Segmentation" href="tutorial_seg.html" />
-    <link rel="prev" title="Dataset" href="tutorial_data.html" /> 
+    <link rel="next" title="Image Preprocess" href="tutorial_img.html" />
+    <link rel="prev" title="Installation" href="tutorial_install.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -111,12 +111,12 @@
 <p class="caption"><span class="caption-text">Tutorial</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="tutorial_install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_data.html">Dataset</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorial_data.html#snemi3d">SNEMI3D</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Dataset</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#snemi3d">SNEMI3D</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Image Preprocess</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#image-deflicker">Image Deflicker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_img.html">Image Preprocess</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_img.html#image-deflicker">Image Deflicker</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_seg.html">Segmentation</a><ul>
@@ -172,13 +172,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Image Preprocess</li>
+      <li>Dataset</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/tutorial/tutorial_img.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/tutorial/tutorial_data.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -191,27 +191,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="image-preprocess">
-<h1>Image Preprocess<a class="headerlink" href="#image-preprocess" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="image-deflicker">
-<h2>Image Deflicker<a class="headerlink" href="#image-deflicker" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p class="first">Install <a class="reference external" href="https://github.com/donglaiw/EM-preprocess">EM-preprocess</a></p>
-</li>
-<li><p class="first">Usage</p>
+  <div class="section" id="dataset">
+<h1>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="snemi3d">
+<h2>SNEMI3D<a class="headerlink" href="#snemi3d" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">em_pre.deflicker</span> <span class="kn">import</span> <span class="n">deflicker_online</span>
-<span class="kn">import</span> <span class="nn">tifffile</span>
-
-<span class="n">ims</span> <span class="o">=</span> <span class="n">tifffile</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;train-input.tif&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">getN</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">ims</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">deflicker_online</span><span class="p">(</span><span class="n">getN</span><span class="p">,</span> <span class="n">opts</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">globalStat</span><span class="o">=</span><span class="p">[</span><span class="mi">150</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">filterS_hsz</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span> <span class="n">filterT_hsz</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>wget http://140.247.107.75/rhoana_product/snemi/image/train-input.tif
+wget http://140.247.107.75/rhoana_product/snemi/seg/train-labels.tif
+wget http://140.247.107.75/rhoana_product/snemi/image/test-input.tif
 </pre></div>
 </div>
 </div></blockquote>
-</li>
-</ol>
 </div>
 </div>
 
@@ -223,10 +213,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tutorial_seg.html" class="btn btn-neutral float-right" title="Segmentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tutorial_img.html" class="btn btn-neutral float-right" title="Image Preprocess" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="tutorial_data.html" class="btn btn-neutral float-left" title="Dataset" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tutorial_install.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
