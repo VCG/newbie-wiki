@@ -31,6 +31,8 @@ Welcome to Visual Computing Group
    :caption: Tutorial
    
    tutorial/tutorial_install
-   tutorial/tutorial_img
+   tutorial/tutorial_align
+   tutorial/tutorial_preprocess
    tutorial/tutorial_seg
    tutorial/tutorial_syn
+   tutorial/tutorial_mito
