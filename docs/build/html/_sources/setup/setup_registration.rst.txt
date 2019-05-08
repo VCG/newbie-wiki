@@ -3,65 +3,72 @@ Registration
 
 School-related
 ---------------
-#. `Harvard ID office  <http://huid.harvard.edu/>`_: get ID and fas email
-#. Office Keys
-    #. Maxwell-Dowrkin (MD)
-        #. contact Michaela (michaela@seas.harvard.edu) MD 353 for application
+- `Harvard ID office  <http://huid.harvard.edu/>`_: get ID and fas email
 
-        #. visit Jason Ortega @Pierce Hall G3E to pick up your key
-    #. Northwest Building (NW)
-        #. visit NW building management office (first floor) to get two fill out forms: room entrance and building entrance
+- Office Keys
 
-        #. visit Suzanne Montgomery @NW249.40 for signature
+    - Maxwell-Dowrkin (MD)
 
-        #. visit NW building management office to pick up your key
+        - contact Michaela (michaela@seas.harvard.edu) MD 353 for application
 
-#. `Register HarvardKey <https://key.harvard.edu/>`_
+        - visit Jason Ortega @Pierce Hall G3E to pick up your key
 
-#. `Request SEAS email <https://password.seas.harvard.edu/itapps/apply/>`_
+    - Northwest Building (NW)
 
-      #.  SEAS IT will change your HavardKey account from fas email to seas email
+        - visit NW building management office (first floor) to get two fill out forms: room entrance and building entrance
 
-      #.  on HarvardKey website, “Manage Your Account & Services” -> login -> “Synchronize Password”
+        - visit Suzanne Montgomery @NW249.40 for signature
+
+        - visit NW building management office to pick up your key
+
+- `Register HarvardKey <https://key.harvard.edu/>`_
+
+- `Request SEAS email <https://password.seas.harvard.edu/itapps/apply/>`_
+
+      -  SEAS IT will change your HavardKey account from fas email to seas email
+
+      -  on HarvardKey website, “Manage Your Account & Services” -> login -> “Synchronize Password”
 
 Group-related
 --------------
-#. Slack (contact Admin)
+- Slack (contact Admin)
 
-    #. vcgplusplus
+    - vcgplusplus
 
-    #. rhoana
+    - rhoana
 
-#. (long-term ppl) VCG google drive
+- (long-term ppl) VCG google drive
 
-    #. request access from Michaela
+    - request access from Michaela
 
-    #. add your personal information: `Group Information/VCG - Group Information <https://docs.google.com/spreadsheet/ccc?key=0AtePNvrCJCcedEtVdjlMV0tKWmVBamI4N25fTjdVelE&usp=drive_web#gid=0>`_
-#. (long-term ppl) VCG website
+    - add your personal information: `Group Information/VCG - Group Information <https://docs.google.com/spreadsheet/ccc?key=0AtePNvrCJCcedEtVdjlMV0tKWmVBamI4N25fTjdVelE&usp=drive_web#gid=0>`_
 
-    #. add yourself to the VCG people list (ask `Fritz <https://lekschas.de/>`_)
+- (long-term ppl) VCG website
+
+    - add yourself to the VCG people list (ask `Fritz <https://lekschas.de/>`_)
 
 Misc
 -----------
-#. Wifi `(Harvard Secure) <http://wifi.harvard.edu/harvard-secure.html>`_
+- Wifi `(Harvard Secure) <http://wifi.harvard.edu/harvard-secure.html>`_
 
-#. Mail: Find your mail in the Pfister Mailbox slot on 2nd level of MD on your right hand side walking up the stairway.
+- Mail: Find your mail in the Pfister Mailbox slot on 2nd level of MD on your right hand side walking up the stairway.
 
-#. Email client
+- Email client
 
-    #. `Browser access <https://outlook.office.com/owa/?realm=harvard.edu>`_
+    - `Browser access <https://outlook.office.com/owa/?realm=harvard.edu>`_
 
-    #. `Thunderbird access <https://uit.stanford.edu/service/office365/configure/thunderbird>`_ (replace stanford with harvard)
+    - `Thunderbird access <https://uit.stanford.edu/service/office365/configure/thunderbird>`_ (replace stanford with harvard)
 
-    #. `Others <https://www.seas.harvard.edu/computing-office/email/set-up-email-client>`_
-#. `Adobe Software <http://huit.harvard.edu/services/campus-licensed-software>`_)
+    - `Others <https://www.seas.harvard.edu/computing-office/email/set-up-email-client>`_
 
-#. `Printing at SEAS <https://www.seas.harvard.edu/computing-office/printing/public-network-printers>`_
+- `Adobe Software <http://huit.harvard.edu/services/campus-licensed-software>`_
 
-#. `Commuter Choice <http://www.transportation.harvard.edu/commuterchoice>`_
+- `Printing at SEAS <https://www.seas.harvard.edu/computing-office/printing/public-network-printers>`_
 
-#. Harvard University ID Discounts
+- `Commuter Choice <http://www.transportation.harvard.edu/commuterchoice>`_
 
-   #. Free Entrance to all Harvard museums
+- Harvard University ID Discounts
 
-   #. Free Entrance to the Museum of Fine Arts, Institute of Contemporary Arts and the Isabella Stewart Gardner Museum. (Note:The discounts for non-Harvard museums might only be valid if your ID says student on it).
+   - Free Entrance to all Harvard museums
+
+   - Free Entrance to the Museum of Fine Arts, Institute of Contemporary Arts and the Isabella Stewart Gardner Museum. (Note:The discounts for non-Harvard museums might only be valid if your ID says student on it).
