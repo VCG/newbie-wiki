@@ -20,13 +20,6 @@ Welcome to Visual Computing Group
 
 .. toctree::
    :glob:
-   :maxdepth: 1
-   :caption: Code
-   
-   code/sample_code
-
-.. toctree::
-   :glob:
    :maxdepth: 2
    :caption: Tutorial
    
