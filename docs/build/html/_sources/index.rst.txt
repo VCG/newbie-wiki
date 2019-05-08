@@ -7,16 +7,16 @@ Welcome to Visual Computing Group
    :maxdepth: 1
    :caption: Setup
 
-   setup/registration
-   setup/computation
-   setup/tips
+   setup/setup_registration
+   setup/setup_computation
+   setup/setup_tips
 
 .. toctree::
    :glob:
    :maxdepth: 1
    :caption: Data
    
-   data/connectomics
+   data/data_em.rst
 
 .. toctree::
    :glob:
