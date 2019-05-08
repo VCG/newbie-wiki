@@ -1,17 +1,7 @@
 __pycache__/
-data/
-build/
 dist/
-alpha/
 .cache/
 .eggs/
 *.egg-info/
-.coverage
-.coverage.*
-
-!torch_geometric/data/
-!test/data/
-!docs/build/
-!docs/build/html/_modules/torch_geometric/data/
 
 *.sw*
