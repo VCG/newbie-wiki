@@ -4,9 +4,9 @@ Image Alignment
 Local Affine Alignment
 -----------------------
 
-#. Install `small_stack_affine_alignment <https://github.com/Rhoana/small_stack_affine_alignment>`_
+- Install `small_stack_affine_alignment <https://github.com/Rhoana/small_stack_affine_alignment>`_
 
-#. Usage
+- Usage
 
     .. code-block:: python
    

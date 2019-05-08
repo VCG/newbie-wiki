@@ -3,8 +3,8 @@ Image Preprocess
 
 Image Deflicker
 ------------------
-#. Install `EM-preprocess <https://github.com/donglaiw/EM-preprocess>`_
-#. Usage
+- Install `EM-preprocess <https://github.com/donglaiw/EM-preprocess>`_
+- Usage
 
     .. code-block:: python
    
