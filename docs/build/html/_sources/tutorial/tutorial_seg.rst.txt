@@ -1,7 +1,7 @@
-Connectomics Segmentation
+Segmentation
 ==========================
 
-SNEMI3D: Neuron
+Neuron: SNEMI3D
 ---------------------
 
 #. Computation
@@ -18,7 +18,7 @@ SNEMI3D: Neuron
 
             .. code-block:: none
             
-                wget http://140.247.107.75/rhoana_product/snemi/aff/model_snemi_dice_mls._train_min.h5
+                wget http://hp03.mindhackers.org/rhoana_product/snemi/aff/model_snemi_dice_mls._train_min.h5
 
         #. Usage
 
@@ -82,5 +82,27 @@ SNEMI3D: Neuron
                     ))
 
             print viewer
+
+#. Evaluation
+
+
+Synapse: CREMI
+------------------
+
+#. Computation
+    
+   #. cleft segmentation training and inference
+
+#. Visualization
+
+#. Evaluation
+
+Mitochondria: Lucchi
+----------------------
+
+
+#. Computation
+    
+#. Visualization
 
 #. Evaluation
