@@ -5,12 +5,12 @@ School-related
 ---------------
 - `Harvard ID office  <http://huid.harvard.edu/>`_: get ID and fas email
 - Office Keys
-    - Maxwell-Dowrkin (MD)
+    - If Maxwell-Dowrkin (MD):
 
         - contact Michaela (michaela@seas.harvard.edu) MD 353 for application
         - visit Jason Ortega @Pierce Hall G3E to pick up your key
 
-    - Northwest Building (NW)
+    - Elif Northwest Building (NW):
 
         - visit NW building management office (first floor) to get two fill out forms: room entrance and building entrance
         - visit Suzanne Montgomery @NW249.40 for signature
