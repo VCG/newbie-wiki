@@ -237,84 +237,13 @@
 </ol>
 </div></blockquote>
 </li>
-<li><p class="first">Visualization</p>
-<ol class="arabic">
-<li><p class="first">Install python back-end</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install neuroglancer
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ol>
-<blockquote>
-<div><ol class="arabic">
-<li><p class="first">Install NodeJS front-end: <a class="reference external" href="https://github.com/google/neuroglancer#building">README.md</a></p>
-</li>
-<li><p class="first">Usage: run on ipython/jupyter notebook or <cite>python -i THIS_FILE.py</cite></p>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">neuroglancer</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">tifffile</span>
-
-<span class="n">ip</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span> <span class="c1"># or public IP of the machine for sharable display</span>
-<span class="n">port</span><span class="o">=</span><span class="mi">98092</span> <span class="c1"># change to an unused port number</span>
-<span class="n">neuroglancer</span><span class="o">.</span><span class="n">set_server_bind_address</span><span class="p">(</span><span class="n">bind_address</span><span class="o">=</span><span class="n">ip</span><span class="p">,</span><span class="n">bind_port</span><span class="o">=</span><span class="n">port</span><span class="p">)</span>
-<span class="n">viewer</span><span class="o">=</span><span class="n">neuroglancer</span><span class="o">.</span><span class="n">Viewer</span><span class="p">()</span>
-
-<span class="c1"># SNEMI</span>
-<span class="n">res</span><span class="o">=</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">30</span><span class="p">];</span> <span class="c1"># resolution of the data</span>
-<span class="k">print</span> <span class="s1">&#39;load im&#39;</span>
-<span class="n">im</span> <span class="o">=</span> <span class="n">tifffile</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;train-input.tif&#39;</span><span class="p">)</span>
-<span class="k">with</span> <span class="n">viewer</span><span class="o">.</span><span class="n">txn</span><span class="p">()</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
-    <span class="n">s</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;im&#39;</span><span class="p">,</span>
-        <span class="n">layer</span><span class="o">=</span><span class="n">neuroglancer</span><span class="o">.</span><span class="n">LocalVolume</span><span class="p">(</span>
-            <span class="n">data</span><span class="o">=</span><span class="n">im</span><span class="p">,</span>
-            <span class="n">voxel_size</span><span class="o">=</span><span class="n">res</span>
-        <span class="p">))</span>
-
-<span class="k">print</span> <span class="s1">&#39;load gt&#39;</span>
-<span class="n">gt</span> <span class="o">=</span> <span class="n">tifffile</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;train-labels.tif&#39;</span><span class="p">)</span>
-<span class="k">with</span> <span class="n">viewer</span><span class="o">.</span><span class="n">txn</span><span class="p">()</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
-    <span class="n">s</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;gt&#39;</span><span class="p">,</span>
-        <span class="n">layer</span><span class="o">=</span><span class="n">neuroglancer</span><span class="o">.</span><span class="n">LocalVolume</span><span class="p">(</span>
-            <span class="n">data</span><span class="o">=</span><span class="n">gt</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">),</span>
-            <span class="n">voxel_size</span><span class="o">=</span><span class="n">res</span>
-        <span class="p">))</span>
-
-<span class="k">print</span> <span class="n">viewer</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ol>
-</div></blockquote>
-</li>
-<li><p class="first">Evaluation</p>
-</li>
 </ol>
 </div>
 <div class="section" id="synapse-cremi">
 <h2>Synapse: CREMI<a class="headerlink" href="#synapse-cremi" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>Computation<ol class="arabic">
-<li>cleft segmentation training and inference</li>
-</ol>
-</li>
-<li>Visualization</li>
-<li>Evaluation</li>
-</ol>
 </div>
 <div class="section" id="mitochondria-lucchi">
 <h2>Mitochondria: Lucchi<a class="headerlink" href="#mitochondria-lucchi" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>Computation</li>
-<li>Visualization</li>
-<li>Evaluation</li>
-</ol>
 </div>
 </div>
 

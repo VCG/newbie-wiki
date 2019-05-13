@@ -35,74 +35,8 @@ Neuron: SNEMI3D
                                 merge_function='aff85_his256',
                                 aff_threshold=aff_thresholds)
 
-#. Visualization
-    
-   #. Install python back-end
-        
-        .. code-block:: none 
-
-            pip install neuroglancer
-
-    #. Install NodeJS front-end: `README.md <https://github.com/google/neuroglancer#building>`_
-
-    #. Usage: run on ipython/jupyter notebook or `python -i THIS_FILE.py`
-
-        .. code-block:: python
-            
-            import neuroglancer
-            import numpy as np
-            import sys
-            import tifffile
-
-            ip='localhost' # or public IP of the machine for sharable display
-            port=98092 # change to an unused port number
-            neuroglancer.set_server_bind_address(bind_address=ip,bind_port=port)
-            viewer=neuroglancer.Viewer()
-
-            # SNEMI
-            res=[6,6,30]; # resolution of the data
-            print 'load im'
-            im = tifffile.imread('train-input.tif')
-            with viewer.txn() as s:
-                s.layers.append(
-                    name='im',
-                    layer=neuroglancer.LocalVolume(
-                        data=im,
-                        voxel_size=res
-                    ))
-
-            print 'load gt'
-            gt = tifffile.imread('train-labels.tif')
-            with viewer.txn() as s:
-                s.layers.append(
-                    name='gt',
-                    layer=neuroglancer.LocalVolume(
-                        data=gt.astype(np.uint16),
-                        voxel_size=res
-                    ))
-
-            print viewer
-
-#. Evaluation
-
-
 Synapse: CREMI
-------------------
-
-#. Computation
-    
-   #. cleft segmentation training and inference
-
-#. Visualization
-
-#. Evaluation
+---------------------
 
 Mitochondria: Lucchi
-----------------------
-
-
-#. Computation
-    
-#. Visualization
-
-#. Evaluation
+---------------------

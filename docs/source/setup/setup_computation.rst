@@ -7,7 +7,7 @@ Harvard RC server (+coxfs/coxgpu)
     - `RC account <https://www.rc.fas.harvard.edu/resources/access-and-login/>`_
         - no need for VPN
         - sanity check: ``ssh USERNAME@login.rc.fas.harvard.edu`` 
-    -  `coxfs01 access <https://portal.rc.fas.harvard.edu/login/?next=/request/grants/add%3Fsearch%3Dcox_lab>`_
+    -  `coxfs01 access <https://portal.rc.fas.harvard.edu/login/?next=/request/grants/add%3Fsearch%3Dcox_lab>`_: request access to cox_lab
 
 - Mount coxfs01 file system to local machine
     - Install packages: ``sudo apt-get install cifs-utils``

@@ -27,3 +27,4 @@ Welcome to Visual Computing Group
    tutorial/tutorial_align
    tutorial/tutorial_preprocess
    tutorial/tutorial_seg
+   tutorial/tutorial_ng
