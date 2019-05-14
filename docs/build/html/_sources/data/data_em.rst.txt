@@ -3,8 +3,8 @@ EM-Connectomics
 TODO: add a summary table
 
 
-SNEMI3D
----------
+SNEMI3D: Segmentation
+--------------------------
 - Description
     - resolution: 6x6x30 nm
 
@@ -16,7 +16,7 @@ SNEMI3D
 
         - ``image/test-input.tif``
 - Download
-    - `Official website <http://brainiac2.mit.edu/SNEMI3D/user/register>`_ (register first)
+    - `snemi website <http://brainiac2.mit.edu/SNEMI3D/user/register>`_ (register first)
 
     - `Rhoana copy <http://hp03.mindhackers.org/rhoana_product/dataset/snemi.zip>`_
 
@@ -25,8 +25,8 @@ SNEMI3D
     - valid: 6x6x4 um (last 156 slices in AC3 in `Kasthuri dataset <https://software.rc.fas.harvard.edu/lichtman/vast/>`_) 
 
 
-CREMI
----------
+CREMI: Segmentation+Synapse
+-------------------------------
 - Description
     - resolution: 4x4x40 nm
 
@@ -44,8 +44,26 @@ CREMI
 
            - A+: fix the crack
 - Download
-   - `Official website <https://cremi.org/data/>`_
+   - `cremi website <https://cremi.org/data/>`_
 
    - `Rhoana copy (corrected) <http://hp03.mindhackers.org/rhoana_product/dataset/cremi.zip>`_
 
    - RC server (corrected): ``/n/coxfs01/vcg_connectomics/cremi/``
+
+LUCCHI: Mitochondria
+---------------------
+- Description
+    - resolution: 5x5x5 nm
+
+    - train: 5x4x1 um
+
+           - ``train_im.tif``, ``train_label.tif``
+    - test: 5x5x5 um
+
+           - ``test_im.tif``
+- Download
+   - `lucchi website <https://cvlab.epfl.ch/data/data-em/>`_
+
+   - `Rhoana copy <http://hp03.mindhackers.org/rhoana_product/dataset/lucchi.zip>`_
+
+   - RC server (corrected): ``/n/coxfs01/vcg_connectomics/mitochondria/Lucchi/``

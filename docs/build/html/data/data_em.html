@@ -103,8 +103,9 @@
 <p class="caption"><span class="caption-text">Data</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">EM-Connectomics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#snemi3d">SNEMI3D</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cremi">CREMI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#snemi3d-segmentation">SNEMI3D: Segmentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cremi-segmentation-synapse">CREMI: Segmentation+Synapse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lucchi-mitochondria">LUCCHI: Mitochondria</a></li>
 </ul>
 </li>
 </ul>
@@ -196,8 +197,8 @@
   <div class="section" id="em-connectomics">
 <h1>EM-Connectomics<a class="headerlink" href="#em-connectomics" title="Permalink to this headline">¶</a></h1>
 <p>TODO: add a summary table</p>
-<div class="section" id="snemi3d">
-<h2>SNEMI3D<a class="headerlink" href="#snemi3d" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="snemi3d-segmentation">
+<h2>SNEMI3D: Segmentation<a class="headerlink" href="#snemi3d-segmentation" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><dl class="first docutils">
 <dt>Description</dt>
@@ -225,7 +226,7 @@
 <li><dl class="first docutils">
 <dt>Download</dt>
 <dd><ul class="first last simple">
-<li><a class="reference external" href="http://brainiac2.mit.edu/SNEMI3D/user/register">Official website</a> (register first)</li>
+<li><a class="reference external" href="http://brainiac2.mit.edu/SNEMI3D/user/register">snemi website</a> (register first)</li>
 <li><a class="reference external" href="http://hp03.mindhackers.org/rhoana_product/dataset/snemi.zip">Rhoana copy</a></li>
 <li>RC server copy: <code class="docutils literal notranslate"><span class="pre">/n/coxfs01/vcg_connectomics/snemi/</span></code></li>
 <li>valid: 6x6x4 um (last 156 slices in AC3 in <a class="reference external" href="https://software.rc.fas.harvard.edu/lichtman/vast/">Kasthuri dataset</a>)</li>
@@ -235,8 +236,8 @@
 </li>
 </ul>
 </div>
-<div class="section" id="cremi">
-<h2>CREMI<a class="headerlink" href="#cremi" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="cremi-segmentation-synapse">
+<h2>CREMI: Segmentation+Synapse<a class="headerlink" href="#cremi-segmentation-synapse" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><dl class="first docutils">
 <dt>Description</dt>
@@ -273,9 +274,47 @@
 <li><dl class="first docutils">
 <dt>Download</dt>
 <dd><ul class="first last simple">
-<li><a class="reference external" href="https://cremi.org/data/">Official website</a></li>
+<li><a class="reference external" href="https://cremi.org/data/">cremi website</a></li>
 <li><a class="reference external" href="http://hp03.mindhackers.org/rhoana_product/dataset/cremi.zip">Rhoana copy (corrected)</a></li>
 <li>RC server (corrected): <code class="docutils literal notranslate"><span class="pre">/n/coxfs01/vcg_connectomics/cremi/</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="lucchi-mitochondria">
+<h2>LUCCHI: Mitochondria<a class="headerlink" href="#lucchi-mitochondria" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="first docutils">
+<dt>Description</dt>
+<dd><ul class="first last">
+<li><p class="first">resolution: 5x5x5 nm</p>
+</li>
+<li><p class="first">train: 5x4x1 um</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">train_im.tif</span></code>, <code class="docutils literal notranslate"><span class="pre">train_label.tif</span></code></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">test: 5x5x5 um</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">test_im.tif</span></code></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Download</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://cvlab.epfl.ch/data/data-em/">lucchi website</a></li>
+<li><a class="reference external" href="http://hp03.mindhackers.org/rhoana_product/dataset/lucchi.zip">Rhoana copy</a></li>
+<li>RC server (corrected): <code class="docutils literal notranslate"><span class="pre">/n/coxfs01/vcg_connectomics/mitochondria/Lucchi/</span></code></li>
 </ul>
 </dd>
 </dl>
