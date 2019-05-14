@@ -96,15 +96,16 @@
             
               <p class="caption"><span class="caption-text">Setup</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../setup/setup_registration.html">Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup/setup_before.html">Before Arrival</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup/setup_registration.html">Upon Arrival</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../setup/setup_computation.html">Computation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../setup/setup_tips.html">Tips</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Data</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../data/data_em.html">EM-Connectomics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../data/data_em.html#snemi3d">SNEMI3D</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data/data_em.html#cremi">CREMI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/data_em.html#snemi3d-segmentation">SNEMI3D: Segmentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/data_em.html#cremi-segmentation-synapse">CREMI: Segmentation+Synapse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/data_em.html#lucchi-mitochondria">LUCCHI: Mitochondria</a></li>
 </ul>
 </li>
 </ul>
@@ -197,34 +198,31 @@
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <p>Our software packages are developed mainly in python on Linux machines.
 For deep learning related functionality, GPUs are required for speed.</p>
-<ul class="simple">
-<li><dl class="first docutils">
-<dt>OS</dt>
-<dd><ul class="first last">
+<ul>
+<li><p class="first">OS</p>
+<blockquote>
+<div><ul class="simple">
 <li>Unix-based OS (e.g. Linux, Mac OS X).</li>
-<li><em>Recommendation</em>: <a class="reference external" href="https://www.ubuntu.com/download/desktop">Ubuntu LTS</a></li>
+<li><strong>Recommendation</strong>: <a class="reference external" href="https://www.ubuntu.com/download/desktop">Ubuntu LTS</a></li>
 </ul>
-</dd>
-</dl>
+</div></blockquote>
 </li>
-<li><dl class="first docutils">
-<dt>Python package manager (Python 3.7)</dt>
-<dd><ul class="first last">
+<li><p class="first">Python package manager (Python 3.7)</p>
+<blockquote>
+<div><ul class="simple">
 <li><a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a></li>
 </ul>
-</dd>
-</dl>
+</div></blockquote>
 </li>
-<li><dl class="first docutils">
-<dt>Github packages</dt>
-<dd><ul class="first last">
-<li><cite>git clone</cite> github packages into one folder (e.g. <cite>~/software/</cite>)</li>
-<li>(skip if reuse previous env) create a conda env: <cite>conda create -n NAME</cite></li>
-<li>activate env: <cite>source activate NAME</cite></li>
-<li>installation: follow README.md in the package</li>
+<li><p class="first">Github packages</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> github packages into one folder (e.g. <code class="docutils literal notranslate"><span class="pre">~/software/</span></code>)</li>
+<li>(skip if reuse previous env) create a conda env: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">NAME</span></code></li>
+<li>activate env: <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">NAME</span></code></li>
+<li>installation: follow instructions in the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> of the package</li>
 </ul>
-</dd>
-</dl>
+</div></blockquote>
 </li>
 </ul>
 </div>

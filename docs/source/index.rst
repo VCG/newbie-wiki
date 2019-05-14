@@ -7,9 +7,9 @@ Welcome to Visual Computing Group
    :maxdepth: 1
    :caption: Setup
 
+   setup/setup_before
    setup/setup_registration
    setup/setup_computation
-   setup/setup_tips
 
 .. toctree::
    :glob:
