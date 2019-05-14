@@ -60,7 +60,7 @@ LUCCHI: Mitochondria
            - ``train_im.tif``, ``train_label.tif``
     - test: 5x5x5 um
 
-           - ``test_im.tif``
+           - ``test_im.tif``, ``test_label.tif``
 - Download
    - `lucchi website <https://cvlab.epfl.ch/data/data-em/>`_
 
