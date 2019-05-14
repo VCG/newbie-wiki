@@ -20,8 +20,8 @@ Harvard RC server (+coxfs/coxgpu)
     - Get an interactive shell for debug
 
         - (${1}: memory in MB, ${2}: # of CPUs, ${3}: # of GPUs)
-        - CPU: ``srun --pty -p cox -t 7-00:00 --mem ${1} -n ${2} /bin/bash``
-        - GPU: ``srun --pty -p cox -t 7-00:00 --mem ${1} -n ${2} --gres=gpu:${3} /bin/bash``
+        - CPU: ``srun --pty -p gpu_requeue -t 7-00:00 --mem ${1} -n ${2} /bin/bash``
+        - GPU: ``srun --pty -p gpu_requeue -t 7-00:00 --mem ${1} -n ${2} --gres=gpu:${3} /bin/bash``
 
     - Submit job in the background ``/n/coxfs01/donglai/ppl/public/example_slurm.py``
 - Setup CUDA env
