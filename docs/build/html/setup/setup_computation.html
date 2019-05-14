@@ -235,12 +235,13 @@
 <li><dl class="first docutils">
 <dt>Submit jobs through slurm scheduler <a class="reference external" href="https://www.rc.fas.harvard.edu/resources/running-jobs/">official tutorial</a>.</dt>
 <dd><ul class="first last">
-<li><p class="first">Get an interactive shell for debug</p>
+<li><p class="first">Get an interactive shell for debug (other partitions <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">gpu_requeue</span></code>
+or <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">seas_dgx1</span></code>)</p>
 <blockquote>
 <div><ul class="simple">
 <li>(${1}: memory in MB, ${2}: # of CPUs, ${3}: # of GPUs)</li>
-<li>CPU: <code class="docutils literal notranslate"><span class="pre">srun</span> <span class="pre">--pty</span> <span class="pre">-p</span> <span class="pre">gpu_requeue</span> <span class="pre">-t</span> <span class="pre">7-00:00</span> <span class="pre">--mem</span> <span class="pre">${1}</span> <span class="pre">-n</span> <span class="pre">${2}</span> <span class="pre">/bin/bash</span></code></li>
-<li>GPU: <code class="docutils literal notranslate"><span class="pre">srun</span> <span class="pre">--pty</span> <span class="pre">-p</span> <span class="pre">gpu_requeue</span> <span class="pre">-t</span> <span class="pre">7-00:00</span> <span class="pre">--mem</span> <span class="pre">${1}</span> <span class="pre">-n</span> <span class="pre">${2}</span> <span class="pre">--gres=gpu:${3}</span> <span class="pre">/bin/bash</span></code></li>
+<li>CPU: <code class="docutils literal notranslate"><span class="pre">srun</span> <span class="pre">--pty</span> <span class="pre">-p</span> <span class="pre">cox</span> <span class="pre">-t</span> <span class="pre">7-00:00</span> <span class="pre">--mem</span> <span class="pre">${1}</span> <span class="pre">-n</span> <span class="pre">${2}</span> <span class="pre">/bin/bash</span></code></li>
+<li>GPU: <code class="docutils literal notranslate"><span class="pre">srun</span> <span class="pre">--pty</span> <span class="pre">-p</span> <span class="pre">cox</span> <span class="pre">-t</span> <span class="pre">7-00:00</span> <span class="pre">--mem</span> <span class="pre">${1}</span> <span class="pre">-n</span> <span class="pre">${2}</span> <span class="pre">--gres=gpu:${3}</span> <span class="pre">/bin/bash</span></code></li>
 </ul>
 </div></blockquote>
 </li>

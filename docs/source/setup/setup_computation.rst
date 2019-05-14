@@ -17,11 +17,12 @@ Harvard RC server (+coxfs/coxgpu)
         sudo mount -t cifs -o vers=1.0,workgroup=rc,username=${1},gid=${2} \
         //coxfs01.rc.fas.harvard.edu/coxfs01 /mnt/coxfs01
 - Submit jobs through slurm scheduler `official tutorial <https://www.rc.fas.harvard.edu/resources/running-jobs/>`_.
-    - Get an interactive shell for debug
+    - Get an interactive shell for debug (other partitions ``-p gpu_requeue``
+      or ``-p seas_dgx1``)
 
         - (${1}: memory in MB, ${2}: # of CPUs, ${3}: # of GPUs)
-        - CPU: ``srun --pty -p gpu_requeue -t 7-00:00 --mem ${1} -n ${2} /bin/bash``
-        - GPU: ``srun --pty -p gpu_requeue -t 7-00:00 --mem ${1} -n ${2} --gres=gpu:${3} /bin/bash``
+        - CPU: ``srun --pty -p cox -t 7-00:00 --mem ${1} -n ${2} /bin/bash``
+        - GPU: ``srun --pty -p cox -t 7-00:00 --mem ${1} -n ${2} --gres=gpu:${3} /bin/bash``
 
     - Submit job in the background ``/n/coxfs01/donglai/ppl/public/example_slurm.py``
 - Setup CUDA env
