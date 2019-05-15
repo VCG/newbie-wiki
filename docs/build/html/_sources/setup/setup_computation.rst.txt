@@ -11,9 +11,14 @@ The server uses the slurm scheduler `official tutorial <https://www.rc.fas.harva
 
 - ``srun``: Get an interactive bash from a machine for debugging 
 
-        - (${1}: memory in MB, ${2}: # of CPUs, ${3}: # of GPUs)
-        - CPU: ``srun --pty -p cox -t 7-00:00 --mem ${1} -n ${2} /bin/bash``
-        - GPU: ``srun --pty -p cox -t 7-00:00 --mem ${1} -n ${2} --gres=gpu:${3} /bin/bash``
+        - parameters: ${1}=memory in MB, ${2}=# of CPUs, ${3}=# of GPUs
+        - request CPU machines::
+            
+            srun --pty -p cox -t 7-00:00 --mem ${1} -n ${2} /bin/bash
+
+        - request GPU machines::
+          
+            srun --pty -p cox -t 7-00:00 --mem ${1} -n ${2} --gres=gpu:${3} /bin/bash
 
 - ``sbatch``: Submit batch of jobs in the background ``/n/coxfs01/donglai/ppl/public/example_slurm.py``
 
@@ -65,7 +70,9 @@ The server uses the slurm scheduler `official tutorial <https://www.rc.fas.harva
 - Setup CUDA env
 
     - Request a GPU machine (``srun`` or ``sbatch``)
-    - Load cuda on rc cluster: ``module load cuda/9.0-fasrc02 cudnn/7.0_cuda9.0-fasrc01``
+    - Load cuda on rc cluster::
+      
+        module load cuda/9.0-fasrc02 cudnn/7.0_cuda9.0-fasrc01
 
 - ssh tunnel for port forwarding (e.g. tensorboard display)
 
@@ -75,8 +82,13 @@ The server uses the slurm scheduler `official tutorial <https://www.rc.fas.harva
         - p2: port on rc server
         - m1: coxgpu name, e.g. coxgpu06
 
-    - On local machine: ``ssh -L p1:localhost:p2 xx@login.rc.fas.harvard.edu``
-    - On rc login server: ``ssh -L p2:localhost:p2 m1``
+    - On local machine::
+      
+        ssh -L p1:localhost:p2 xx@login.rc.fas.harvard.edu
+
+    - On rc login server:: 
+      
+        ssh -L p2:localhost:p2 m1
 
 
 Group server (hp03 machine)
@@ -92,15 +104,18 @@ Local Machine Setup
 -------------------------------
 - Install miniconda: create a new conda env for each project
 
-    - local copy (py27): ``sh /home/donglai/Downloads/Miniconda2-latest-Linux-x86_64.sh``
     - `download <https://conda.io/en/latest/miniconda.html>`_
 
 - Install Jupyter notebook for interactive result display
 
 - Mount coxfs01 file system to local machine
 
-    - Install packages: ``sudo apt-get install cifs-utils``
+    - Install packages::
+
+        sudo apt-get install cifs-utils
+
     - Get your ``gid`` on your local machine: ``id``
+    - Create the folder if it doesn't exist ``sudo mkdir /mnt/coxfs01``
     - Mount it with your rc username and local machine ``gid``::
 
         sudo mount -t cifs -o vers=1.0,workgroup=rc,username=${1},gid=${2} \
@@ -116,16 +131,14 @@ Local Machine Setup
     - ssh
 
         - Automatic login in new bashes (after the login in a bash)
-        - Create a file with the following content: ``vim ~/.ssh/config``
-            ::
+        - Create a file with the following content: ``vim ~/.ssh/config``::
 
-                Host *
-                  ControlMaster auto
-                  ControlPath ~/.ssh/master-%r@%h:%p
+            Host *
+              ControlMaster auto
+              ControlPath ~/.ssh/master-%r@%h:%p
 
     - bash	
 
-        - Add useful alias: `vim ~/.bashrc`
-            ::
+        - Add useful alias: `vim ~/.bashrc` ::
 
-              alias csh='ssh ${USERNAME}@login.rc.fas.harvard.edu'
+            alias csh='ssh ${USERNAME}@login.rc.fas.harvard.edu'
