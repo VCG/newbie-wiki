@@ -9,16 +9,22 @@ The server uses the slurm scheduler `official tutorial <https://www.rc.fas.harva
 
 - machine partitions option (``-p``): use ``cox``, ``seas_dgx1``, ``gpu_requeue``
 
+- useful ``slurm`` commands
+
+    - ``squeue -u ${username}``: check job status
+    - ``scancel -u ${username}``: cancel all your jobs
+    - ``scancel ${jobid}``: cancel a specific job
+
 - ``srun``: Get an interactive bash from a machine for debugging 
 
-        - parameters: ${1}=memory in MB, ${2}=# of CPUs, ${3}=# of GPUs
-        - request CPU machines::
-            
-            srun --pty -p cox -t 7-00:00 --mem ${1} -n ${2} /bin/bash
+    - parameters: ${1}=memory in MB, ${2}=# of CPUs, ${3}=# of GPUs
+    - request CPU machines::
+        
+        srun --pty -p cox -t 7-00:00 --mem ${1} -n ${2} /bin/bash
 
-        - request GPU machines::
-          
-            srun --pty -p cox -t 7-00:00 --mem ${1} -n ${2} --gres=gpu:${3} /bin/bash
+    - request GPU machines::
+      
+        srun --pty -p cox -t 7-00:00 --mem ${1} -n ${2} --gres=gpu:${3} /bin/bash
 
 - ``sbatch``: Submit batch of jobs in the background ``/n/coxfs01/donglai/ppl/public/example_slurm.py``
 
@@ -95,18 +101,48 @@ Group server (hp03 machine)
 -------------------------------
 - Get account and IP address: ask Admin
 
-- ssh: ssh ${IP}
+- ssh access from a terminal: ``ssh ${IP}``
 
-- Jupyter notebook: http://${IP}:9999
+- Jupyter notebook access from a browser: ``http://${IP}:9999``
 
+- Scripts for Admin
+
+  - create new account::
+    
+        sudo adduser ${username}
+  
+  - grant sudo/coxfs access::
+    
+        sudo usermod -aG sudo ${username}
+        sudo usermod -aG coxfs ${username}
+  
+  - delete account: ``sudo deluser ${username}``
+
+  - list all users: ``cut -d: -f1 /etc/passwd``
+
+- Copy existing jupyter notebook kernel
 
 Local Machine Setup
 -------------------------------
 - Install miniconda: create a new conda env for each project
 
     - `download <https://conda.io/en/latest/miniconda.html>`_
+    - create new env::
+
+        conda create -n ${conda-env-name}
+
+    - activate new env::
+
+        source activate ${conda-env-name}
+    
+    - deactivate env::
+
+        source deactivate
 
 - Install Jupyter notebook for interactive result display
+    - create new kernel (first install ``ipython, ipykernel``)::
+
+          ipython kernel install --user --name ${conda-env-name} --display-name "${display-name}" 
 
 - Mount coxfs01 file system to local machine
 
@@ -125,8 +161,8 @@ Local Machine Setup
 
     - Terminal (split screen)
 
-        - On mac: try `iterm2`
-        - On Linux: try `terminator` or `tmux`
+        - On mac: try ``iterm2``
+        - On Linux: try ``terminator`` or ``tmux``
 
     - ssh
 

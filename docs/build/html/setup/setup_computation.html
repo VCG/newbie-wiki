@@ -203,6 +203,15 @@
 <ul>
 <li><p class="first">machine partitions option (<code class="docutils literal notranslate"><span class="pre">-p</span></code>): use <code class="docutils literal notranslate"><span class="pre">cox</span></code>, <code class="docutils literal notranslate"><span class="pre">seas_dgx1</span></code>, <code class="docutils literal notranslate"><span class="pre">gpu_requeue</span></code></p>
 </li>
+<li><p class="first">useful <code class="docutils literal notranslate"><span class="pre">slurm</span></code> commands</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-u</span> <span class="pre">${username}</span></code>: check job status</li>
+<li><code class="docutils literal notranslate"><span class="pre">scancel</span> <span class="pre">-u</span> <span class="pre">${username}</span></code>: cancel all your jobs</li>
+<li><code class="docutils literal notranslate"><span class="pre">scancel</span> <span class="pre">${jobid}</span></code>: cancel a specific job</li>
+</ul>
+</div></blockquote>
+</li>
 <li><p class="first"><code class="docutils literal notranslate"><span class="pre">srun</span></code>: Get an interactive bash from a machine for debugging</p>
 <blockquote>
 <div><ul>
@@ -310,10 +319,34 @@
 </div>
 <div class="section" id="group-server-hp03-machine">
 <h2>Group server (hp03 machine)<a class="headerlink" href="#group-server-hp03-machine" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Get account and IP address: ask Admin</li>
-<li>ssh: ssh ${IP}</li>
-<li>Jupyter notebook: <a class="reference external" href="http:/">http:/</a>/${IP}:9999</li>
+<ul>
+<li><p class="first">Get account and IP address: ask Admin</p>
+</li>
+<li><p class="first">ssh access from a terminal: <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">${IP}</span></code></p>
+</li>
+<li><p class="first">Jupyter notebook access from a browser: <code class="docutils literal notranslate"><span class="pre">http://${IP}:9999</span></code></p>
+</li>
+<li><p class="first">Scripts for Admin</p>
+<ul>
+<li><p class="first">create new account:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo adduser ${username}
+</pre></div>
+</div>
+</li>
+<li><p class="first">grant sudo/coxfs access:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo usermod -aG sudo ${username}
+sudo usermod -aG coxfs ${username}
+</pre></div>
+</div>
+</li>
+<li><p class="first">delete account: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">deluser</span> <span class="pre">${username}</span></code></p>
+</li>
+<li><p class="first">list all users: <code class="docutils literal notranslate"><span class="pre">cut</span> <span class="pre">-d:</span> <span class="pre">-f1</span> <span class="pre">/etc/passwd</span></code></p>
+</li>
+</ul>
+</li>
+<li><p class="first">Copy existing jupyter notebook kernel</p>
+</li>
 </ul>
 </div>
 <div class="section" id="local-machine-setup">
@@ -321,12 +354,38 @@
 <ul>
 <li><p class="first">Install miniconda: create a new conda env for each project</p>
 <blockquote>
-<div><ul class="simple">
-<li><a class="reference external" href="https://conda.io/en/latest/miniconda.html">download</a></li>
+<div><ul>
+<li><p class="first"><a class="reference external" href="https://conda.io/en/latest/miniconda.html">download</a></p>
+</li>
+<li><p class="first">create new env:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>conda create -n ${conda-env-name}
+</pre></div>
+</div>
+</li>
+<li><p class="first">activate new env:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>source activate ${conda-env-name}
+</pre></div>
+</div>
+</li>
+<li><p class="first">deactivate env:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">deactivate</span>
+</pre></div>
+</div>
+</li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">Install Jupyter notebook for interactive result display</p>
+<li><dl class="first docutils">
+<dt>Install Jupyter notebook for interactive result display</dt>
+<dd><ul class="first last">
+<li><p class="first">create new kernel (first install <code class="docutils literal notranslate"><span class="pre">ipython,</span> <span class="pre">ipykernel</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ipython kernel install --user --name ${conda-env-name} --display-name &quot;${display-name}&quot;
+</pre></div>
+</div>
+</li>
+</ul>
+</dd>
+</dl>
 </li>
 <li><p class="first">Mount coxfs01 file system to local machine</p>
 <blockquote>
@@ -355,8 +414,8 @@
 <li><p class="first">Terminal (split screen)</p>
 <blockquote>
 <div><ul class="simple">
-<li>On mac: try <cite>iterm2</cite></li>
-<li>On Linux: try <cite>terminator</cite> or <cite>tmux</cite></li>
+<li>On mac: try <code class="docutils literal notranslate"><span class="pre">iterm2</span></code></li>
+<li>On Linux: try <code class="docutils literal notranslate"><span class="pre">terminator</span></code> or <code class="docutils literal notranslate"><span class="pre">tmux</span></code></li>
 </ul>
 </div></blockquote>
 </li>
