@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation &mdash; Intern-Wiki  documentation</title>
+  <title>RC Tutorial &mdash; Intern-Wiki  documentation</title>
   
 
   
@@ -46,8 +46,7 @@
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Image Alignment" href="tutorial_align.html" />
-    <link rel="prev" title="EM-Connectomics" href="../data/data_em.html" /> 
+    <link rel="prev" title="Visualization" href="tutorial_ng.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -111,7 +110,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Tutorial</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_align.html">Image Alignment</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorial_align.html#local-affine-alignment">Local Affine Alignment</a></li>
 </ul>
@@ -130,10 +129,10 @@
 <li class="toctree-l2"><a class="reference internal" href="tutorial_ng.html#neuroglancer">Neuroglancer</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_slurm.html">RC Tutorial</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorial_slurm.html#prerequisites">Prerequisites.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial_slurm.html#setup-instructions">Setup Instructions.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial_slurm.html#running-jobs-slurm">Running Jobs (SLURM)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">RC Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup-instructions">Setup Instructions.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-jobs-slurm">Running Jobs (SLURM)</a></li>
 </ul>
 </li>
 </ul>
@@ -181,13 +180,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Installation</li>
+      <li>RC Tutorial</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/tutorial/tutorial_install.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/tutorial/tutorial_slurm.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -200,37 +199,151 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>Our software packages are developed mainly in python on Linux machines.
-For deep learning related functionality, GPUs are required for speed.</p>
-<ul>
-<li><p class="first">OS</p>
+  <div class="section" id="rc-tutorial">
+<h1>RC Tutorial<a class="headerlink" href="#rc-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial will walk you through the basic steps of setting up an environment on Harvard RC server and run the Neuron Segmentation Task on the SNEMI dataset.</p>
+<div class="section" id="prerequisites">
+<h2>Prerequisites.<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">User ID for Harvard RC</p>
 <blockquote>
-<div><ul class="simple">
-<li>Unix-based OS (e.g. Linux, Mac OS X).</li>
-<li><strong>Recommendation</strong>: <a class="reference external" href="https://www.ubuntu.com/download/desktop">Ubuntu LTS</a></li>
-</ul>
+<div><ol class="arabic simple">
+<li>Request <cite>here &lt;https://www.rc.fas.harvard.edu/resources/access-and-login/&gt;</cite></li>
+</ol>
 </div></blockquote>
 </li>
-<li><p class="first">Python package manager (Python 3.7)</p>
+<li><p class="first">coxfs01 access Affinity -&gt; 3D Segmentation</p>
 <blockquote>
-<div><ul class="simple">
-<li><a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a></li>
-</ul>
+<div><ol class="arabic simple">
+<li>Request <cite>here &lt;https://portal.rc.fas.harvard.edu/login/?next=/request/grants/add%3Fsearch%3Dcox_lab&gt;</cite></li>
+</ol>
 </div></blockquote>
 </li>
-<li><p class="first">Github packages</p>
+</ol>
+</div>
+<div class="section" id="setup-instructions">
+<h2>Setup Instructions.<a class="headerlink" href="#setup-instructions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Login into RC</p>
 <blockquote>
-<div><ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> github packages into one folder (e.g. <code class="docutils literal notranslate"><span class="pre">~/software/</span></code>)</li>
-<li>(skip if reuse previous env) create a conda env: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">NAME</span></code></li>
-<li>activate env: <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">NAME</span></code></li>
-<li>installation: follow instructions in the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> of the package</li>
-</ul>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ssh {username}@login.rc.fas.harvard.edu
+</pre></div>
+</div>
 </div></blockquote>
 </li>
-</ul>
+<li><p class="first">Install Anaconda</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><cite>Tutorial &lt;https://www.digitalocean.com/community/tutorials/how-to-install-anaconda-on-ubuntu-18-04-quickstart&gt;</cite></li>
+<li>Follow Steps 1 - 8</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p class="first">Load modules</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>module load centos6/0.0.1-fasrc01
+module load gcc/7.1.0-fasrc01
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><dl class="first docutils">
+<dt>Create a new environment (with Python 3.6)</dt>
+<dd><div class="first last highlight-none notranslate"><div class="highlight"><pre><span></span>conda create -n {env_name} python=3.6
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Activate the environment and install PyTorch</dt>
+<dd><ol class="first last arabic">
+<li><p class="first"><cite>Link &lt;https://pytorch.org/&gt;</cite></p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda activate {env_name}
+conda install pytorch=1.0 torchvision cudatoolkit=9.0 -c pytorch
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>[Optional] Install <cite>PyTorch Connectomics&lt;https://zudi-lin.github.io/pytorch_connectomics/build/html/notes/installation.html&gt;</cite></dt>
+<dd><blockquote class="first">
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone git@github.com:zudi-lin/pytorch_connectomics.git
+cd pytorch_connectomics
+pip install -r requirements.txt
+pip install --editable .
+</pre></div>
+</div>
+</div></blockquote>
+<p class="last">Check <cite>TROUBLESHOOTING.md &lt;https://github.com/zudi-lin/pytorch_connectomics/blob/master/TROUBLESHOOTING.md&gt;</cite> in case of compilation errors.</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="running-jobs-slurm">
+<h2>Running Jobs (SLURM)<a class="headerlink" href="#running-jobs-slurm" title="Permalink to this headline">¶</a></h2>
+<p>There are two ways to run a job on Harvard RC: interactively (using the <cite>srun</cite> command) or by submitting a job to a queue (using the <cite>sbatch</cite> command). (A detailed documentation for the RC can be found <cite>here &lt;https://www.rc.fas.harvard.edu/resources/running-jobs/&gt;</cite>)</p>
+<ol class="arabic">
+<li><p class="first">Login into the RC server</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">Using srun</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first"><cite>srun</cite> gets an interactive bash from a machine with the requested resources</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>srun --pty -p ${1} -t ${2} --mem ${3} -n ${4} /bin/bash
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li>${1} -&gt; machine partition (<cite>cox</cite>, <cite>seas_dgx1</cite>, <cite>gpu_requeue</cite>)</li>
+<li>${2} -&gt; Time period (format D-hh:mm)</li>
+<li>${3} -&gt; Amount of memory for the job (in MB)</li>
+<li>${4} -&gt; Number of cores</li>
+<li>Request GPU resources: <cite>–gres=gpu:{num_gpu}</cite></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p class="first">Using sbatch</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first"><cite>sbatch</cite> is used to submit a batch of jobs in the background</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+#SBATCH -n 1                # Number of cores
+#SBATCH -N 1                # Ensure that all cores are on one machine
+#SBATCH -t 2-00:00          # Runtime in D-HH:MM, minimum of 10 minutes
+#SBATCH -p gpu_requeue      # Partition to submit to
+#SBATCH --gres=gpu:8        # Generic Resources
+#SBATCH --mem=16000         # Memory pool for all cores (see also --mem-per-cpu)
+#SBATCH -o {file where STDOUT will be written}{_%j.out}   # %j inserts jobid
+#SBATCH -e {file where STDERR will be written}{_%j.err}   # %j inserts jobid
+
+module load centos6/0.0.1-fasrc01
+module load gcc/7.1.0-fasrc01
+conda activate mitoskel
+.........
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+</div>
 </div>
 
 
@@ -241,10 +354,8 @@ For deep learning related functionality, GPUs are required for speed.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tutorial_align.html" class="btn btn-neutral float-right" title="Image Alignment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="../data/data_em.html" class="btn btn-neutral float-left" title="EM-Connectomics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tutorial_ng.html" class="btn btn-neutral float-left" title="Visualization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
