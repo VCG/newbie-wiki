@@ -8,11 +8,11 @@ Prerequisites.
 
 #. User ID for Harvard RC 
 
-    #. Request `here <https://www.rc.fas.harvard.edu/resources/access-and-login/>`
+    #. Request `link <https://www.rc.fas.harvard.edu/resources/access-and-login/>`_
 
 #. coxfs01 access Affinity -> 3D Segmentation
         
-        #. Request `here <https://portal.rc.fas.harvard.edu/login/?next=/request/grants/add%3Fsearch%3Dcox_lab>`
+        #. Request `link <https://portal.rc.fas.harvard.edu/login/?next=/request/grants/add%3Fsearch%3Dcox_lab>`_
         
 
 Setup Instructions.
@@ -26,7 +26,7 @@ Setup Instructions.
 
 #. Install Anaconda 
 
-    #. `Tutorial <https://www.digitalocean.com/community/tutorials/how-to-install-anaconda-on-ubuntu-18-04-quickstart>`
+    #. `Tutorial <https://www.digitalocean.com/community/tutorials/how-to-install-anaconda-on-ubuntu-18-04-quickstart>`_
     #. Follow Steps 1 - 8
 
 #. Load modules
@@ -42,14 +42,14 @@ Setup Instructions.
 		conda create -n {env_name} python=3.6
 
 #. Activate the environment and install PyTorch
-    #. `Link <https://pytorch.org/>`
+    #. `Link <https://pytorch.org/>`_
 
 	    .. code-block:: none
 
 		conda activate {env_name}
 		conda install pytorch=1.0 torchvision cudatoolkit=9.0 -c pytorch
 
-#. [Optional] Install `PyTorch Connectomics<https://zudi-lin.github.io/pytorch_connectomics/build/html/notes/installation.html>`
+#. [Optional] Install `PyTorch Connectomics <https://zudi-lin.github.io/pytorch_connectomics/build/html/notes/installation.html>`_
 	    .. code-block:: none
 
 		git clone git@github.com:zudi-lin/pytorch_connectomics.git
@@ -57,19 +57,19 @@ Setup Instructions.
 		pip install -r requirements.txt
 		pip install --editable .
 
-    Check `TROUBLESHOOTING.md <https://github.com/zudi-lin/pytorch_connectomics/blob/master/TROUBLESHOOTING.md>` in case of compilation errors.
+    Check `TROUBLESHOOTING.md <https://github.com/zudi-lin/pytorch_connectomics/blob/master/TROUBLESHOOTING.md>` in case of compilation errors._
 
 
 Running Jobs (SLURM)
 ---------------------
 
-There are two ways to run a job on Harvard RC: interactively (using the `srun` command) or by submitting a job to a queue (using the `sbatch` command). (A detailed documentation for the RC can be found `here <https://www.rc.fas.harvard.edu/resources/running-jobs/>`) 
+There are two ways to run a job on Harvard RC: interactively (using the ``srun`` command) or by submitting a job to a queue (using the ``sbatch`` command). (A detailed documentation for the RC can be found `here <https://www.rc.fas.harvard.edu/resources/running-jobs/>`_) 
 
 #. Login into the RC server
 
     #. Using srun
      
-        #. `srun` gets an interactive bash from a machine with the requested resources
+        #. ``srun`` gets an interactive bash from a machine with the requested resources
 
 	    .. code-block:: none
 
@@ -77,7 +77,7 @@ There are two ways to run a job on Harvard RC: interactively (using the `srun` c
 
 
 	    
-	    #. ${1} -> machine partition (`cox`, `seas_dgx1`, `gpu_requeue`)
+	    #. ${1} -> machine partition (``cox``, ``seas_dgx1``, ``gpu_requeue``)
 
 	    #. ${2} -> Time period (format D-hh:mm)
 
@@ -85,11 +85,11 @@ There are two ways to run a job on Harvard RC: interactively (using the `srun` c
 
 	    #. ${4} -> Number of cores
 
-	    #. Request GPU resources: `--gres=gpu:{num_gpu}`
+	    #. Request GPU resources: ``--gres=gpu:{num_gpu}``
 
 	#. Using sbatch
 	
-	    #. `sbatch` is used to submit a batch of jobs in the background
+	    #. ``sbatch`` is used to submit a batch of jobs in the background
 
 		.. code-block:: none
 

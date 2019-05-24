@@ -208,14 +208,14 @@
 <li><p class="first">User ID for Harvard RC</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li>Request <cite>here &lt;https://www.rc.fas.harvard.edu/resources/access-and-login/&gt;</cite></li>
+<li>Request <a class="reference external" href="https://www.rc.fas.harvard.edu/resources/access-and-login/">link</a></li>
 </ol>
 </div></blockquote>
 </li>
 <li><p class="first">coxfs01 access Affinity -&gt; 3D Segmentation</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li>Request <cite>here &lt;https://portal.rc.fas.harvard.edu/login/?next=/request/grants/add%3Fsearch%3Dcox_lab&gt;</cite></li>
+<li>Request <a class="reference external" href="https://portal.rc.fas.harvard.edu/login/?next=/request/grants/add%3Fsearch%3Dcox_lab">link</a></li>
 </ol>
 </div></blockquote>
 </li>
@@ -234,7 +234,7 @@
 <li><p class="first">Install Anaconda</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><cite>Tutorial &lt;https://www.digitalocean.com/community/tutorials/how-to-install-anaconda-on-ubuntu-18-04-quickstart&gt;</cite></li>
+<li><a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-install-anaconda-on-ubuntu-18-04-quickstart">Tutorial</a></li>
 <li>Follow Steps 1 - 8</li>
 </ol>
 </div></blockquote>
@@ -258,7 +258,7 @@ module load gcc/7.1.0-fasrc01
 <li><dl class="first docutils">
 <dt>Activate the environment and install PyTorch</dt>
 <dd><ol class="first last arabic">
-<li><p class="first"><cite>Link &lt;https://pytorch.org/&gt;</cite></p>
+<li><p class="first"><a class="reference external" href="https://pytorch.org/">Link</a></p>
 <blockquote>
 <div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda activate {env_name}
 conda install pytorch=1.0 torchvision cudatoolkit=9.0 -c pytorch
@@ -271,7 +271,7 @@ conda install pytorch=1.0 torchvision cudatoolkit=9.0 -c pytorch
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>[Optional] Install <cite>PyTorch Connectomics&lt;https://zudi-lin.github.io/pytorch_connectomics/build/html/notes/installation.html&gt;</cite></dt>
+<dt>[Optional] Install <a class="reference external" href="https://zudi-lin.github.io/pytorch_connectomics/build/html/notes/installation.html">PyTorch Connectomics</a></dt>
 <dd><blockquote class="first">
 <div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone git@github.com:zudi-lin/pytorch_connectomics.git
 cd pytorch_connectomics
@@ -280,7 +280,7 @@ pip install --editable .
 </pre></div>
 </div>
 </div></blockquote>
-<p class="last">Check <cite>TROUBLESHOOTING.md &lt;https://github.com/zudi-lin/pytorch_connectomics/blob/master/TROUBLESHOOTING.md&gt;</cite> in case of compilation errors.</p>
+<p class="last">Check <cite>TROUBLESHOOTING.md &lt;https://github.com/zudi-lin/pytorch_connectomics/blob/master/TROUBLESHOOTING.md&gt;</cite> in case of compilation errors._</p>
 </dd>
 </dl>
 </li>
@@ -288,7 +288,7 @@ pip install --editable .
 </div>
 <div class="section" id="running-jobs-slurm">
 <h2>Running Jobs (SLURM)<a class="headerlink" href="#running-jobs-slurm" title="Permalink to this headline">¶</a></h2>
-<p>There are two ways to run a job on Harvard RC: interactively (using the <cite>srun</cite> command) or by submitting a job to a queue (using the <cite>sbatch</cite> command). (A detailed documentation for the RC can be found <cite>here &lt;https://www.rc.fas.harvard.edu/resources/running-jobs/&gt;</cite>)</p>
+<p>There are two ways to run a job on Harvard RC: interactively (using the <code class="docutils literal notranslate"><span class="pre">srun</span></code> command) or by submitting a job to a queue (using the <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> command). (A detailed documentation for the RC can be found <a class="reference external" href="https://www.rc.fas.harvard.edu/resources/running-jobs/">here</a>)</p>
 <ol class="arabic">
 <li><p class="first">Login into the RC server</p>
 <blockquote>
@@ -296,24 +296,24 @@ pip install --editable .
 <li><p class="first">Using srun</p>
 <blockquote>
 <div><ol class="arabic">
-<li><p class="first"><cite>srun</cite> gets an interactive bash from a machine with the requested resources</p>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">srun</span></code> gets an interactive bash from a machine with the requested resources</p>
 <blockquote>
 <div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>srun --pty -p ${1} -t ${2} --mem ${3} -n ${4} /bin/bash
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li>${1} -&gt; machine partition (<cite>cox</cite>, <cite>seas_dgx1</cite>, <cite>gpu_requeue</cite>)</li>
+<li>${1} -&gt; machine partition (<code class="docutils literal notranslate"><span class="pre">cox</span></code>, <code class="docutils literal notranslate"><span class="pre">seas_dgx1</span></code>, <code class="docutils literal notranslate"><span class="pre">gpu_requeue</span></code>)</li>
 <li>${2} -&gt; Time period (format D-hh:mm)</li>
 <li>${3} -&gt; Amount of memory for the job (in MB)</li>
 <li>${4} -&gt; Number of cores</li>
-<li>Request GPU resources: <cite>–gres=gpu:{num_gpu}</cite></li>
+<li>Request GPU resources: <code class="docutils literal notranslate"><span class="pre">--gres=gpu:{num_gpu}</span></code></li>
 </ol>
 </div></blockquote>
 </li>
 <li><p class="first">Using sbatch</p>
 <blockquote>
 <div><ol class="arabic">
-<li><p class="first"><cite>sbatch</cite> is used to submit a batch of jobs in the background</p>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">sbatch</span></code> is used to submit a batch of jobs in the background</p>
 <blockquote>
 <div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
 #SBATCH -n 1                # Number of cores
