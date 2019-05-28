@@ -10,7 +10,7 @@ Harvard RC server
 
         - sanity check: ``ssh USERNAME@login.rc.fas.harvard.edu`` 
 
-    -  `coxfs01 access <https://portal.rc.fas.harvard.edu/login/?next=/request/grants/add%3Fsearch%3Dcox_lab>`_: request access to cox_lab
+        - access to file system  ``ls /n/pfister_lab/``
 
 Slack (contact Admin)
 ------------------------
