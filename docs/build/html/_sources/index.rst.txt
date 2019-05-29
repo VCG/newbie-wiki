@@ -21,11 +21,17 @@ Welcome to Visual Computing Group
 .. toctree::
    :glob:
    :maxdepth: 2
-   :caption: Tutorial
+   :caption: Tutorial-System
    
    tutorial/tutorial_install
+   tutorial/tutorial_slurm
+
+.. toctree::
+   :glob:
+   :maxdepth: 2
+   :caption: Tutorial-AI
+   
    tutorial/tutorial_align
    tutorial/tutorial_preprocess
    tutorial/tutorial_seg
    tutorial/tutorial_ng
-   tutorial/tutorial_slurm
