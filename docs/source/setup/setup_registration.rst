@@ -50,7 +50,7 @@ Misc
 
     - `Browser access <https://outlook.office.com/owa/?realm=harvard.edu>`_
     - `Thunderbird access <https://uit.stanford.edu/service/office365/configure/thunderbird>`_ (replace stanford with harvard)
-    - `Others <https://www.seas.harvard.edu/computing-office/email/set-up-email-client>`_
+    - `Others <https://www.seas.harvard.edu/computing-office/email/using-outlook-web-app>`_
 
 - `Adobe Software <http://huit.harvard.edu/services/campus-licensed-software>`_
 
