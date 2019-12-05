@@ -34,7 +34,7 @@ Neuroglancer
         # SNEMI
         D0='/mnt/coxfs01/vcg_connectomics/snemi/'
         res=[6,6,30]; # resolution of the data
-        print 'load im'
+        print('load im')
         im = tifffile.imread(D0+'img/train-input.tif')
         with viewer.txn() as s:
             s.layers.append(
@@ -44,7 +44,7 @@ Neuroglancer
                     voxel_size=res
                 ))
 
-        print 'load gt'
+        print('load gt')
         gt = tifffile.imread(D0+'label/train-labels.tif')
         with viewer.txn() as s:
             s.layers.append(
@@ -54,6 +54,6 @@ Neuroglancer
                     voxel_size=res
                 ))
 
-        print viewer
+        print(viewer)
 
 
