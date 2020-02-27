@@ -20,21 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -204,22 +194,20 @@
 <div class="section" id="snemi3d-segmentation">
 <h2>SNEMI3D: Segmentation<a class="headerlink" href="#snemi3d-segmentation" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><dl class="first docutils">
-<dt>Description</dt>
-<dd><ul class="first last">
-<li><p class="first">resolution: 6x6x30 nm</p>
-</li>
-<li><p class="first">train: 6x6x3 um (AC4 in <a class="reference external" href="https://software.rc.fas.harvard.edu/lichtman/vast/">Kasthuri dataset</a>)</p>
+<li><dl>
+<dt>Description</dt><dd><ul>
+<li><p>resolution: 6x6x30 nm</p></li>
+<li><p>train: 6x6x3 um (AC4 in <a class="reference external" href="https://software.rc.fas.harvard.edu/lichtman/vast/">Kasthuri dataset</a>)</p>
 <blockquote>
 <div><ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">image/train-input.tif</span></code>, <code class="docutils literal notranslate"><span class="pre">seg/train-labels.tif</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">image/train-input.tif</span></code>, <code class="docutils literal notranslate"><span class="pre">seg/train-labels.tif</span></code></p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">test: 6x6x3 um (first 100 slices in AC3 in <a class="reference external" href="https://software.rc.fas.harvard.edu/lichtman/vast/">Kasthuri dataset</a>)</p>
+<li><p>test: 6x6x3 um (first 100 slices in AC3 in <a class="reference external" href="https://software.rc.fas.harvard.edu/lichtman/vast/">Kasthuri dataset</a>)</p>
 <blockquote>
 <div><ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">image/test-input.tif</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">image/test-input.tif</span></code></p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -227,13 +215,12 @@
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>Download</dt>
-<dd><ul class="first last simple">
-<li><a class="reference external" href="http://brainiac2.mit.edu/SNEMI3D/user/register">snemi website</a> (register first)</li>
-<li><a class="reference external" href="http://hp03.mindhackers.org/rhoana_product/dataset/snemi.zip">Rhoana copy</a></li>
-<li>RC server copy: <code class="docutils literal notranslate"><span class="pre">/n/coxfs01/vcg_connectomics/snemi/</span></code></li>
-<li>valid: 6x6x4 um (last 156 slices in AC3 in <a class="reference external" href="https://software.rc.fas.harvard.edu/lichtman/vast/">Kasthuri dataset</a>)</li>
+<li><dl class="simple">
+<dt>Download</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="http://brainiac2.mit.edu/SNEMI3D/user/register">snemi website</a> (register first)</p></li>
+<li><p><a class="reference external" href="http://hp03.mindhackers.org/rhoana_product/dataset/snemi.zip">Rhoana copy</a></p></li>
+<li><p>RC server copy: <code class="docutils literal notranslate"><span class="pre">/n/coxfs01/vcg_connectomics/snemi/</span></code></p></li>
+<li><p>valid: 6x6x4 um (last 156 slices in AC3 in <a class="reference external" href="https://software.rc.fas.harvard.edu/lichtman/vast/">Kasthuri dataset</a>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -243,31 +230,29 @@
 <div class="section" id="cremi-segmentation-synapse">
 <h2>CREMI: Segmentation+Synapse<a class="headerlink" href="#cremi-segmentation-synapse" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><dl class="first docutils">
-<dt>Description</dt>
-<dd><ul class="first last">
-<li><p class="first">resolution: 4x4x40 nm</p>
-</li>
-<li><p class="first">train: 5x5x5 um</p>
+<li><dl>
+<dt>Description</dt><dd><ul>
+<li><p>resolution: 4x4x40 nm</p></li>
+<li><p>train: 5x5x5 um</p>
 <blockquote>
 <div><ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">orig/sample_{A,B,C}_20160501.hdf</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">orig/sample_{A,B,C}_20160501.hdf</span></code></p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">test: 5x5x5 um</p>
+<li><p>test: 5x5x5 um</p>
 <blockquote>
 <div><ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">orig/sample_{A,B,C}+_20160601.hdf</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">orig/sample_{A,B,C}+_20160601.hdf</span></code></p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">correction:</p>
+<li><p>correction:</p>
 <blockquote>
 <div><ul class="simple">
-<li>shift re-alignment all volumes</li>
-<li>{A,B,C}: crop the intersecting regions</li>
-<li>A+: fix the crack</li>
+<li><p>shift re-alignment all volumes</p></li>
+<li><p>{A,B,C}: crop the intersecting regions</p></li>
+<li><p>A+: fix the crack</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -275,12 +260,11 @@
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>Download</dt>
-<dd><ul class="first last simple">
-<li><a class="reference external" href="https://cremi.org/data/">cremi website</a></li>
-<li><a class="reference external" href="http://hp03.mindhackers.org/rhoana_product/dataset/cremi.zip">Rhoana copy (corrected)</a></li>
-<li>RC server (corrected): <code class="docutils literal notranslate"><span class="pre">/n/coxfs01/vcg_connectomics/cremi/</span></code></li>
+<li><dl class="simple">
+<dt>Download</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://cremi.org/data/">cremi website</a></p></li>
+<li><p><a class="reference external" href="http://hp03.mindhackers.org/rhoana_product/dataset/cremi.zip">Rhoana copy (corrected)</a></p></li>
+<li><p>RC server (corrected): <code class="docutils literal notranslate"><span class="pre">/n/coxfs01/vcg_connectomics/cremi/</span></code></p></li>
 </ul>
 </dd>
 </dl>
@@ -290,22 +274,20 @@
 <div class="section" id="lucchi-mitochondria">
 <h2>LUCCHI: Mitochondria<a class="headerlink" href="#lucchi-mitochondria" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><dl class="first docutils">
-<dt>Description</dt>
-<dd><ul class="first last">
-<li><p class="first">resolution: 5x5x5 nm</p>
-</li>
-<li><p class="first">train: 5x4x1 um</p>
+<li><dl>
+<dt>Description</dt><dd><ul>
+<li><p>resolution: 5x5x5 nm</p></li>
+<li><p>train: 5x4x1 um</p>
 <blockquote>
 <div><ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">train_im.tif</span></code>, <code class="docutils literal notranslate"><span class="pre">train_label.tif</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">train_im.tif</span></code>, <code class="docutils literal notranslate"><span class="pre">train_label.tif</span></code></p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">test: 5x5x5 um</p>
+<li><p>test: 5x5x5 um</p>
 <blockquote>
 <div><ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">test_im.tif</span></code>, <code class="docutils literal notranslate"><span class="pre">test_label.tif</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">test_im.tif</span></code>, <code class="docutils literal notranslate"><span class="pre">test_label.tif</span></code></p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -313,12 +295,11 @@
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>Download</dt>
-<dd><ul class="first last simple">
-<li><a class="reference external" href="https://cvlab.epfl.ch/data/data-em/">lucchi website</a></li>
-<li><a class="reference external" href="http://hp03.mindhackers.org/rhoana_product/dataset/lucchi.zip">Rhoana copy</a></li>
-<li>RC server (corrected): <code class="docutils literal notranslate"><span class="pre">/n/coxfs01/vcg_connectomics/mitochondria/Lucchi/</span></code></li>
+<li><dl class="simple">
+<dt>Download</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://cvlab.epfl.ch/data/data-em/">lucchi website</a></p></li>
+<li><p><a class="reference external" href="http://hp03.mindhackers.org/rhoana_product/dataset/lucchi.zip">Rhoana copy</a></p></li>
+<li><p>RC server (corrected): <code class="docutils literal notranslate"><span class="pre">/n/coxfs01/vcg_connectomics/mitochondria/Lucchi/</span></code></p></li>
 </ul>
 </dd>
 </dl>
@@ -347,7 +328,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, VCG, Harvard University
+        &copy; Copyright 2020, VCG, Harvard University
 
     </p>
   </div>

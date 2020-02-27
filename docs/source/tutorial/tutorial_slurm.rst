@@ -6,14 +6,8 @@ This tutorial will walk you through the basic steps of setting up an environment
 Prerequisites.
 ---------------------
 
-#. User ID for Harvard RC 
+#. `User ID for Harvard RC <https://www.rc.fas.harvard.edu/resources/access-and-login/>`_ 
 
-    #. Request `link <https://www.rc.fas.harvard.edu/resources/access-and-login/>`_
-
-#. coxfs01 access Affinity -> 3D Segmentation
-        
-        #. Request `link <https://portal.rc.fas.harvard.edu/login/?next=/request/grants/add%3Fsearch%3Dcox_lab>`_
-        
 
 Setup Instructions.
 ---------------------
@@ -22,7 +16,8 @@ Setup Instructions.
 
             .. code-block:: none
             
-                ssh {username}@login.rc.fas.harvard.edu
+            ssh {username}@login.rc.fas.harvard.edu
+
 
 #. Install Anaconda 
 
@@ -30,20 +25,17 @@ Setup Instructions.
     #. Follow Steps 1 - 8
 
 #. Load modules
+        .. code-block:: none
 
-            .. code-block:: none
-
-                module load centos6/0.0.1-fasrc01
-		module load gcc/7.1.0-fasrc01
+        module load centos6/0.0.1-fasrc01
+        module load gcc/7.1.0-fasrc01
 
 #. Create a new environment (with Python 3.6)
 	    .. code-block:: none
 
 		conda create -n {env_name} python=3.6
 
-#. Activate the environment and install PyTorch
-    #. `Link <https://pytorch.org/>`_
-
+#. Activate the environment and install `PyTorch <https://pytorch.org/>`_
 	    .. code-block:: none
 
 		conda activate {env_name}

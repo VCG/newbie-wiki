@@ -20,21 +20,11 @@
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -203,75 +193,55 @@
 <p>This tutorial will walk you through the basic steps of setting up an environment on Harvard RC server and run the Neuron Segmentation Task on the SNEMI dataset.</p>
 <div class="section" id="prerequisites">
 <h2>Prerequisites.<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p class="first">User ID for Harvard RC</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li>Request <a class="reference external" href="https://www.rc.fas.harvard.edu/resources/access-and-login/">link</a></li>
-</ol>
-</div></blockquote>
-</li>
-<li><p class="first">coxfs01 access Affinity -&gt; 3D Segmentation</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li>Request <a class="reference external" href="https://portal.rc.fas.harvard.edu/login/?next=/request/grants/add%3Fsearch%3Dcox_lab">link</a></li>
-</ol>
-</div></blockquote>
-</li>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.rc.fas.harvard.edu/resources/access-and-login/">User ID for Harvard RC</a></p></li>
 </ol>
 </div>
 <div class="section" id="setup-instructions">
 <h2>Setup Instructions.<a class="headerlink" href="#setup-instructions" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Login into RC</p>
+<li><p>Login into RC</p>
 <blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ssh {username}@login.rc.fas.harvard.edu
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
+<p>ssh <a class="reference external" href="mailto:{username}&#37;&#52;&#48;login&#46;rc&#46;fas&#46;harvard&#46;edu">{username}<span>&#64;</span>login<span>&#46;</span>rc<span>&#46;</span>fas<span>&#46;</span>harvard<span>&#46;</span>edu</a></p>
 </div></blockquote>
 </li>
-<li><p class="first">Install Anaconda</p>
+<li><p>Install Anaconda</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-install-anaconda-on-ubuntu-18-04-quickstart">Tutorial</a></li>
-<li>Follow Steps 1 - 8</li>
+<li><p><a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-install-anaconda-on-ubuntu-18-04-quickstart">Tutorial</a></p></li>
+<li><p>Follow Steps 1 - 8</p></li>
 </ol>
 </div></blockquote>
 </li>
-<li><p class="first">Load modules</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>module load centos6/0.0.1-fasrc01
-module load gcc/7.1.0-fasrc01
+<li><dl>
+<dt>Load modules</dt><dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-</div></blockquote>
+<p>module load centos6/0.0.1-fasrc01
+module load gcc/7.1.0-fasrc01</p>
+</dd>
+</dl>
 </li>
-<li><dl class="first docutils">
-<dt>Create a new environment (with Python 3.6)</dt>
-<dd><div class="first last highlight-none notranslate"><div class="highlight"><pre><span></span>conda create -n {env_name} python=3.6
+<li><dl>
+<dt>Create a new environment (with Python 3.6)</dt><dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda create -n {env_name} python=3.6
 </pre></div>
 </div>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>Activate the environment and install PyTorch</dt>
-<dd><ol class="first last arabic">
-<li><p class="first"><a class="reference external" href="https://pytorch.org/">Link</a></p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda activate {env_name}
+<li><dl>
+<dt>Activate the environment and install <a class="reference external" href="https://pytorch.org/">PyTorch</a></dt><dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda activate {env_name}
 conda install pytorch=1.0 torchvision cudatoolkit=9.0 -c pytorch
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-</ol>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>[Optional] Install <a class="reference external" href="https://zudi-lin.github.io/pytorch_connectomics/build/html/notes/installation.html">PyTorch Connectomics</a></dt>
-<dd><blockquote class="first">
+<li><dl>
+<dt>[Optional] Install <a class="reference external" href="https://zudi-lin.github.io/pytorch_connectomics/build/html/notes/installation.html">PyTorch Connectomics</a></dt><dd><blockquote>
 <div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone git@github.com:zudi-lin/pytorch_connectomics.git
 cd pytorch_connectomics
 pip install -r requirements.txt
@@ -279,7 +249,7 @@ pip install --editable .
 </pre></div>
 </div>
 </div></blockquote>
-<p class="last">Check <cite>TROUBLESHOOTING.md &lt;https://github.com/zudi-lin/pytorch_connectomics/blob/master/TROUBLESHOOTING.md&gt;</cite> in case of compilation errors._</p>
+<p>Check <cite>TROUBLESHOOTING.md &lt;https://github.com/zudi-lin/pytorch_connectomics/blob/master/TROUBLESHOOTING.md&gt;</cite> in case of compilation errors._</p>
 </dd>
 </dl>
 </li>
@@ -289,30 +259,30 @@ pip install --editable .
 <h2>Running Jobs (SLURM)<a class="headerlink" href="#running-jobs-slurm" title="Permalink to this headline">¶</a></h2>
 <p>There are two ways to run a job on Harvard RC: interactively (using the <code class="docutils literal notranslate"><span class="pre">srun</span></code> command) or by submitting a job to a queue (using the <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> command). (A detailed documentation for the RC can be found <a class="reference external" href="https://www.rc.fas.harvard.edu/resources/running-jobs/">here</a>)</p>
 <ol class="arabic">
-<li><p class="first">Login into the RC server</p>
+<li><p>Login into the RC server</p>
 <blockquote>
 <div><ol class="arabic">
-<li><p class="first">Using srun</p>
+<li><p>Using srun</p>
 <blockquote>
 <div><ol class="arabic">
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">srun</span></code> gets an interactive bash from a machine with the requested resources</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">srun</span></code> gets an interactive bash from a machine with the requested resources</p>
 <blockquote>
 <div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>srun --pty -p ${1} -t ${2} --mem ${3} -n ${4} /bin/bash
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li>${1} -&gt; machine partition (<code class="docutils literal notranslate"><span class="pre">cox</span></code>, <code class="docutils literal notranslate"><span class="pre">seas_dgx1</span></code>, <code class="docutils literal notranslate"><span class="pre">gpu_requeue</span></code>)</li>
-<li>${2} -&gt; Time period (format D-hh:mm)</li>
-<li>${3} -&gt; Amount of memory for the job (in MB)</li>
-<li>${4} -&gt; Number of cores</li>
-<li>Request GPU resources: <code class="docutils literal notranslate"><span class="pre">--gres=gpu:{num_gpu}</span></code></li>
+<li><p>${1} -&gt; machine partition (<code class="docutils literal notranslate"><span class="pre">cox</span></code>, <code class="docutils literal notranslate"><span class="pre">seas_dgx1</span></code>, <code class="docutils literal notranslate"><span class="pre">gpu_requeue</span></code>)</p></li>
+<li><p>${2} -&gt; Time period (format D-hh:mm)</p></li>
+<li><p>${3} -&gt; Amount of memory for the job (in MB)</p></li>
+<li><p>${4} -&gt; Number of cores</p></li>
+<li><p>Request GPU resources: <code class="docutils literal notranslate"><span class="pre">--gres=gpu:{num_gpu}</span></code></p></li>
 </ol>
 </div></blockquote>
 </li>
-<li><p class="first">Using sbatch</p>
+<li><p>Using sbatch</p>
 <blockquote>
 <div><ol class="arabic">
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">sbatch</span></code> is used to submit a batch of jobs in the background</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">sbatch</span></code> is used to submit a batch of jobs in the background</p>
 <blockquote>
 <div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
 #SBATCH -n 1                # Number of cores
@@ -365,7 +335,7 @@ conda activate mitoskel
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, VCG, Harvard University
+        &copy; Copyright 2020, VCG, Harvard University
 
     </p>
   </div>
