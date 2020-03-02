@@ -10,7 +10,10 @@ Harvard RC server
 
         - no need for VPN
 
-        - sanity check: ``ssh USERNAME@login.rc.fas.harvard.edu`` 
+    - Email Prof. Pfister on your request, so that he can approve it
+
+    - Sanity check
+        - ``ssh USERNAME@login.rc.fas.harvard.edu`` 
 
         - access to file system  ``ls /n/pfister_lab2/Lab/``
 
