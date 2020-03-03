@@ -25,6 +25,7 @@ Welcome to Visual Computing Group
    
    tutorial/tutorial_install
    tutorial/tutorial_slurm
+   tutorial/tutoral_jupyter_on_cluster
 
 .. toctree::
    :glob:
@@ -35,4 +36,4 @@ Welcome to Visual Computing Group
    tutorial/tutorial_preprocess
    tutorial/tutorial_seg
    tutorial/tutorial_ng
-   tutorial/tutoral_jupyter_on_cluster
+   
