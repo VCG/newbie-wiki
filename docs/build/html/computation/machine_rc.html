@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Computation &mdash; Intern-Wiki  documentation</title>
+  <title>Harvard RC server &mdash; Intern-Wiki  documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="EM-Connectomics" href="../data/data_em.html" />
-    <link rel="prev" title="Upon Arrival" href="setup_registration.html" /> 
+    <link rel="next" title="Group server (hp03 machine)" href="machine_group.html" />
+    <link rel="prev" title="Upon Arrival" href="../setup/registration.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -84,11 +84,27 @@
               
             
             
-              <p class="caption"><span class="caption-text">Setup</span></p>
+              <p class="caption"><span class="caption-text">Logistics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../setup/before.html">Before Arrival</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup/registration.html">Upon Arrival</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Computation</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="setup_before.html">Before Arrival</a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup_registration.html">Upon Arrival</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Computation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Harvard RC server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rc-cluster">RC Cluster</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="machine_group.html">Group server (hp03 machine)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="machine_local.html">Local Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter_on_cluster.html">Running Jupyter lab on RC cluster</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jupyter_on_cluster.html#part-1">Part 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter_on_cluster.html#part-2">Part 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter_on_cluster.html#useful-aliases-and-bash-functions">Useful aliases and bash functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Rhoana2 Tutorials</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Data</span></p>
 <ul>
@@ -98,32 +114,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../data/data_em.html#lucchi-mitochondria">LUCCHI: Mitochondria</a></li>
 </ul>
 </li>
-</ul>
-<p class="caption"><span class="caption-text">Tutorial-System</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial/tutorial_install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial/tutorial_slurm.html">RC Tutorial</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/tutorial_slurm.html#prerequisites">Prerequisites.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/tutorial_slurm.html#setup-instructions">Setup Instructions.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/tutorial_slurm.html#running-jobs-slurm">Running Jobs (SLURM)</a></li>
-</ul>
-</li>
-</ul>
-<p class="caption"><span class="caption-text">Tutorial-AI</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial/tutorial_align.html">Image Alignment</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/tutorial_align.html#local-affine-alignment">Local Affine Alignment</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial/tutorial_preprocess.html">Image Preprocess</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/tutorial_preprocess.html#image-deflicker">Image Deflicker</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial/tutorial_seg.html">EM-Segmentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial/tutorial_ng.html">Visualization</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/tutorial_ng.html#neuroglancer">Neuroglancer</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../data/data_ivf.html">IVF Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/data_cycif.html">CYCIF Datasets</a></li>
 </ul>
 
             
@@ -169,13 +161,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Computation</li>
+      <li>Harvard RC server</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/setup/setup_computation.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/computation/machine_rc.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -188,13 +180,26 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="computation">
-<h1>Computation<a class="headerlink" href="#computation" title="Permalink to this headline">¶</a></h1>
-<p>In general, we use the Harvard RC cluster for data storage/computation, and local machines or group servers for visualization/jupyter notebook.</p>
-<div class="section" id="harvard-rc-server">
-<h2>Harvard RC server<a class="headerlink" href="#harvard-rc-server" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="harvard-rc-server">
+<h1>Harvard RC server<a class="headerlink" href="#harvard-rc-server" title="Permalink to this headline">¶</a></h1>
 <p>The server uses the slurm scheduler <a class="reference external" href="https://www.rc.fas.harvard.edu/resources/running-jobs/">official tutorial</a>.</p>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.rc.fas.harvard.edu/resources/access-and-login/">User ID for Harvard RC</a></p></li>
+</ol>
+</div>
+<div class="section" id="rc-cluster">
+<h2>RC Cluster<a class="headerlink" href="#rc-cluster" title="Permalink to this headline">¶</a></h2>
 <ul>
+<li><p>Login into RC</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>ssh <a class="reference external" href="mailto:{username}&#37;&#52;&#48;login&#46;rc&#46;fas&#46;harvard&#46;edu">{username}<span>&#64;</span>login<span>&#46;</span>rc<span>&#46;</span>fas<span>&#46;</span>harvard<span>&#46;</span>edu</a></p>
+</div></blockquote>
+</li>
 <li><p>machine partitions option (<code class="docutils literal notranslate"><span class="pre">-p</span></code>): use <code class="docutils literal notranslate"><span class="pre">cox</span></code>, <code class="docutils literal notranslate"><span class="pre">seas_dgx1</span></code>, <code class="docutils literal notranslate"><span class="pre">gpu_requeue</span></code></p></li>
 <li><p>useful <code class="docutils literal notranslate"><span class="pre">slurm</span></code> commands</p>
 <blockquote>
@@ -222,7 +227,25 @@
 </ul>
 </div></blockquote>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sbatch</span></code>: Submit batch of jobs in the background <code class="docutils literal notranslate"><span class="pre">/n/coxfs01/donglai/ppl/public/example_slurm.py</span></code></p>
+<li><p><code class="docutils literal notranslate"><span class="pre">sbatch</span></code>: Submit batch of jobs in the background</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+#SBATCH -n 1                # Number of cores
+#SBATCH -N 1                # Ensure that all cores are on one machine
+#SBATCH -t 2-00:00          # Runtime in D-HH:MM, minimum of 10 minutes
+#SBATCH -p gpu_requeue      # Partition to submit to
+#SBATCH --gres=gpu:1        # Number of GPUs
+#SBATCH --mem=16000         # Memory pool for all cores (see also --mem-per-cpu)
+#SBATCH -o {file where STDOUT will be written}{_%j.out}   # %j inserts jobid
+#SBATCH -e {file where STDERR will be written}{_%j.err}   # %j inserts jobid
+
+YOUR COMMAND HERE
+.........
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sbatch</span></code>: use python to generate/submit jobs</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">opt</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -247,7 +270,7 @@
         <span class="n">suf</span> <span class="o">=</span> <span class="s1">&#39; </span><span class="se">\n</span><span class="s1">&#39;</span>
         <span class="n">num</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span><span class="n">cn</span> <span class="o">=</span> <span class="s1">&#39;classify4-jwr_20um.py&#39;</span>
         <span class="n">cmd</span><span class="o">+=</span><span class="p">[</span><span class="s1">&#39;source activate pipeline </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">]</span> <span class="c1"># activate your conda env</span>
-        <span class="n">cmd</span><span class="o">+=</span><span class="p">[</span><span class="s1">&#39;python /n/coxfs01/donglai/jwr/&#39;</span><span class="o">+</span><span class="n">cn</span><span class="o">+</span><span class="s1">&#39; </span><span class="si">%d</span><span class="s1"> &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="o">+</span><span class="n">suf</span><span class="p">]</span>
+        <span class="n">cmd</span><span class="o">+=</span><span class="p">[</span><span class="s1">&#39;python &#39;</span><span class="o">+</span><span class="n">cn</span><span class="o">+</span><span class="s1">&#39; </span><span class="si">%d</span><span class="s1"> &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="o">+</span><span class="n">suf</span><span class="p">]</span>
 
 <span class="n">pref</span><span class="o">=</span><span class="n">get_pref</span><span class="p">(</span><span class="n">mem</span><span class="p">,</span> <span class="n">do_gpu</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">#SBATCH -o &quot;&quot;&quot;</span><span class="o">+</span><span class="n">Do</span><span class="o">+</span><span class="s2">&quot;&quot;&quot;slurm.%N.%j.out # STDOUT</span>
@@ -267,18 +290,6 @@
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;for i in {0..</span><span class="si">%d</span><span class="s1">};do sbatch &#39;</span><span class="o">+</span><span class="n">Do</span><span class="o">+</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">_$</span><span class="si">{i}</span><span class="s1">.sh &amp;&amp; sleep 1;done&#39;</span><span class="p">)</span><span class="o">%</span><span class="p">(</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">fn</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-<li><p>Setup CUDA env</p>
-<blockquote>
-<div><ul>
-<li><p>Request a GPU machine (<code class="docutils literal notranslate"><span class="pre">srun</span></code> or <code class="docutils literal notranslate"><span class="pre">sbatch</span></code>)</p></li>
-<li><p>Load cuda on rc cluster:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">cuda</span><span class="o">/</span><span class="mf">9.0</span><span class="o">-</span><span class="n">fasrc02</span> <span class="n">cudnn</span><span class="o">/</span><span class="mf">7.0</span><span class="n">_cuda9</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">fasrc01</span>
-</pre></div>
-</div>
-</li>
-</ul>
 </div></blockquote>
 </li>
 <li><p>ssh tunnel for port forwarding (e.g. tensorboard display)</p>
@@ -306,127 +317,10 @@
 </ul>
 </div></blockquote>
 </li>
-</ul>
-</div>
-<div class="section" id="group-server-hp03-machine">
-<h2>Group server (hp03 machine)<a class="headerlink" href="#group-server-hp03-machine" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><p>Get account and IP address: ask Admin</p></li>
-<li><p>ssh access from a terminal: <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">${IP}</span></code></p></li>
-<li><p>Jupyter notebook access from a browser: <code class="docutils literal notranslate"><span class="pre">http://${IP}:9999</span></code></p></li>
-<li><p>Scripts for Admin</p>
-<ul>
-<li><p>create new account:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo adduser ${username}
+<li><p>Load cuda on rc cluster:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">cuda</span><span class="o">/</span><span class="mf">9.0</span><span class="o">-</span><span class="n">fasrc02</span> <span class="n">cudnn</span><span class="o">/</span><span class="mf">7.0</span><span class="n">_cuda9</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">fasrc01</span>
 </pre></div>
 </div>
-</li>
-<li><p>grant sudo/coxfs access:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo usermod -aG sudo ${username}
-sudo usermod -aG coxfs ${username}
-</pre></div>
-</div>
-</li>
-<li><p>delete account: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">deluser</span> <span class="pre">${username}</span></code></p></li>
-<li><p>list all users: <code class="docutils literal notranslate"><span class="pre">cut</span> <span class="pre">-d:</span> <span class="pre">-f1</span> <span class="pre">/etc/passwd</span></code></p></li>
-</ul>
-</li>
-<li><p>Copy existing jupyter notebook kernel</p></li>
-</ul>
-</div>
-<div class="section" id="local-machine-setup">
-<h2>Local Machine Setup<a class="headerlink" href="#local-machine-setup" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><p>Install miniconda: create a new conda env for each project</p>
-<blockquote>
-<div><ul>
-<li><p><a class="reference external" href="https://conda.io/en/latest/miniconda.html">download</a></p></li>
-<li><p>create new env:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>conda create -n ${conda-env-name}
-</pre></div>
-</div>
-</li>
-<li><p>activate new env:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>source activate ${conda-env-name}
-</pre></div>
-</div>
-</li>
-<li><p>deactivate env:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">deactivate</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</div></blockquote>
-</li>
-<li><dl>
-<dt>Install Jupyter notebook for interactive result display</dt><dd><ul>
-<li><p>create new kernel (first install <code class="docutils literal notranslate"><span class="pre">ipython,</span> <span class="pre">ipykernel</span></code>):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ipython kernel install --user --name ${conda-env-name} --display-name &quot;${display-name}&quot;
-</pre></div>
-</div>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p>Mount coxfs01 file system to local machine</p>
-<blockquote>
-<div><ul>
-<li><p>Install packages:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">cifs</span><span class="o">-</span><span class="n">utils</span>
-</pre></div>
-</div>
-</li>
-<li><p>Get your <code class="docutils literal notranslate"><span class="pre">gid</span></code> on your local machine: <code class="docutils literal notranslate"><span class="pre">id</span></code></p></li>
-<li><p>Create the folder if it doesn’t exist <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">mkdir</span> <span class="pre">/mnt/coxfs01</span></code></p></li>
-<li><p>Mount it with your rc username and local machine <code class="docutils literal notranslate"><span class="pre">gid</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo mount -t cifs -o vers=1.0,workgroup=rc,username=${1},gid=${2} \
-//coxfs01.rc.fas.harvard.edu/coxfs01 /mnt/coxfs01
-</pre></div>
-</div>
-</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p>Unix Tips</p>
-<blockquote>
-<div><ul>
-<li><p>Terminal (split screen)</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>On mac: try <code class="docutils literal notranslate"><span class="pre">iterm2</span></code></p></li>
-<li><p>On Linux: try <code class="docutils literal notranslate"><span class="pre">terminator</span></code> or <code class="docutils literal notranslate"><span class="pre">tmux</span></code></p></li>
-</ul>
-</div></blockquote>
-</li>
-<li><p>ssh</p>
-<blockquote>
-<div><ul>
-<li><p>Automatic login in new bashes (after the login in a bash)</p></li>
-<li><p>Create a file with the following content: <code class="docutils literal notranslate"><span class="pre">vim</span> <span class="pre">~/.ssh/config</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Host</span> <span class="o">*</span>
-  <span class="n">ControlMaster</span> <span class="n">auto</span>
-  <span class="n">ControlPath</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">master</span><span class="o">-%</span><span class="n">r</span><span class="o">@%</span><span class="n">h</span><span class="p">:</span><span class="o">%</span><span class="n">p</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p>bash</p>
-<blockquote>
-<div><ul>
-<li><p>Add useful alias: <cite>vim ~/.bashrc</cite></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alias</span> <span class="n">csh</span><span class="o">=</span><span class="s1">&#39;ssh $</span><span class="si">{USERNAME}</span><span class="s1">@login.rc.fas.harvard.edu&#39;</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-</div></blockquote>
 </li>
 </ul>
 </div>
@@ -440,10 +334,10 @@ sudo usermod -aG coxfs ${username}
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../data/data_em.html" class="btn btn-neutral float-right" title="EM-Connectomics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="machine_group.html" class="btn btn-neutral float-right" title="Group server (hp03 machine)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="setup_registration.html" class="btn btn-neutral float-left" title="Upon Arrival" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../setup/registration.html" class="btn btn-neutral float-left" title="Upon Arrival" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

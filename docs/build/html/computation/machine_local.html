@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Local Machine &mdash; Intern-Wiki  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Running Jupyter lab on RC cluster" href="jupyter_on_cluster.html" />
+    <link rel="prev" title="Group server (hp03 machine)" href="machine_group.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/vcg-logo_100.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Logistics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../setup/before.html">Before Arrival</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup/registration.html">Upon Arrival</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Computation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="machine_rc.html">Harvard RC server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="machine_rc.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="machine_rc.html#rc-cluster">RC Cluster</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="machine_group.html">Group server (hp03 machine)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Local Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter_on_cluster.html">Running Jupyter lab on RC cluster</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jupyter_on_cluster.html#part-1">Part 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter_on_cluster.html#part-2">Part 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter_on_cluster.html#useful-aliases-and-bash-functions">Useful aliases and bash functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Rhoana2 Tutorials</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Data</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data/data_em.html">EM-Connectomics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data/data_em.html#snemi3d-segmentation">SNEMI3D: Segmentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/data_em.html#cremi-segmentation-synapse">CREMI: Segmentation+Synapse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/data_em.html#lucchi-mitochondria">LUCCHI: Mitochondria</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../data/data_ivf.html">IVF Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/data_cycif.html">CYCIF Datasets</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Intern-Wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Local Machine</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/computation/machine_local.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="local-machine">
+<h1>Local Machine<a class="headerlink" href="#local-machine" title="Permalink to this headline">¶</a></h1>
+<p>Our software packages are developed mainly in python on Linux machines.
+For deep learning related functionality, GPUs are required for speed.</p>
+<ul>
+<li><p>OS</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Unix-based OS (e.g. Linux, Mac OS X).</p></li>
+<li><p><strong>Recommendation</strong>: <a class="reference external" href="https://www.ubuntu.com/download/desktop">Ubuntu LTS</a></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Install Miniconda (python 3.7): create a new conda env for each project</p>
+<blockquote>
+<div><ul>
+<li><p><a class="reference external" href="https://conda.io/en/latest/miniconda.html">download</a></p></li>
+<li><p>create new env:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>conda create -n ${conda-env-name}
+</pre></div>
+</div>
+</li>
+<li><p>activate new env:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>source activate ${conda-env-name}
+</pre></div>
+</div>
+</li>
+<li><p>deactivate env:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">deactivate</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><dl>
+<dt>Install Jupyter notebook for interactive result display</dt><dd><ul>
+<li><p>create new kernel (first install <code class="docutils literal notranslate"><span class="pre">ipython,</span> <span class="pre">ipykernel</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ipython kernel install --user --name ${conda-env-name} --display-name &quot;${display-name}&quot;
+</pre></div>
+</div>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Mount pfister_lab2 file system to local machine</p>
+<blockquote>
+<div><ul>
+<li><p>Install packages:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">cifs</span><span class="o">-</span><span class="n">utils</span>
+</pre></div>
+</div>
+</li>
+<li><p>Get your <code class="docutils literal notranslate"><span class="pre">gid</span></code> on your local machine: <code class="docutils literal notranslate"><span class="pre">id</span></code></p></li>
+<li><p>Create the folder if it doesn’t exist <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">mkdir</span> <span class="pre">/mnt/pfister_lab2</span></code></p></li>
+<li><p>Mount it with your rc username and local machine <code class="docutils literal notranslate"><span class="pre">gid</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo mount -t cifs -o vers=1.0,workgroup=rc,username=${1},gid=${2} \
+//coxfs01.rc.fas.harvard.edu/pfister_lab2 /mnt/pfister_lab2
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Unix Tips</p>
+<blockquote>
+<div><ul>
+<li><p>Terminal (split screen)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>On mac: try <code class="docutils literal notranslate"><span class="pre">iterm2</span></code></p></li>
+<li><p>On Linux: try <code class="docutils literal notranslate"><span class="pre">terminator</span></code> or <code class="docutils literal notranslate"><span class="pre">tmux</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>ssh</p>
+<blockquote>
+<div><ul>
+<li><p>Automatic login in new bashes (after the login in a bash)</p></li>
+<li><p>Create a file with the following content: <code class="docutils literal notranslate"><span class="pre">vim</span> <span class="pre">~/.ssh/config</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Host</span> <span class="o">*</span>
+  <span class="n">ControlMaster</span> <span class="n">auto</span>
+  <span class="n">ControlPath</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">master</span><span class="o">-%</span><span class="n">r</span><span class="o">@%</span><span class="n">h</span><span class="p">:</span><span class="o">%</span><span class="n">p</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>bash</p>
+<blockquote>
+<div><ul>
+<li><p>Add useful alias: <cite>vim ~/.bashrc</cite></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alias</span> <span class="n">csh</span><span class="o">=</span><span class="s1">&#39;ssh $</span><span class="si">{USERNAME}</span><span class="s1">@login.rc.fas.harvard.edu&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="jupyter_on_cluster.html" class="btn btn-neutral float-right" title="Running Jupyter lab on RC cluster" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="machine_group.html" class="btn btn-neutral float-left" title="Group server (hp03 machine)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, VCG, Harvard University
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

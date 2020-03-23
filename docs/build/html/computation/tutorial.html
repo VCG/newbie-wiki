@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>EM-Segmentation &mdash; Intern-Wiki  documentation</title>
+  <title>Rhoana2 Tutorials &mdash; Intern-Wiki  documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Visualization" href="tutorial_ng.html" />
-    <link rel="prev" title="Image Preprocess" href="tutorial_preprocess.html" /> 
+    <link rel="next" title="EM-Connectomics" href="../data/data_em.html" />
+    <link rel="prev" title="Running Jupyter lab on RC cluster" href="jupyter_on_cluster.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -84,11 +84,27 @@
               
             
             
-              <p class="caption"><span class="caption-text">Setup</span></p>
+              <p class="caption"><span class="caption-text">Logistics</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../setup/setup_before.html">Before Arrival</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../setup/setup_registration.html">Upon Arrival</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../setup/setup_computation.html">Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup/before.html">Before Arrival</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup/registration.html">Upon Arrival</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Computation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="machine_rc.html">Harvard RC server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="machine_rc.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="machine_rc.html#rc-cluster">RC Cluster</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="machine_group.html">Group server (hp03 machine)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="machine_local.html">Local Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter_on_cluster.html">Running Jupyter lab on RC cluster</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jupyter_on_cluster.html#part-1">Part 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter_on_cluster.html#part-2">Part 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter_on_cluster.html#useful-aliases-and-bash-functions">Useful aliases and bash functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Rhoana2 Tutorials</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Data</span></p>
 <ul>
@@ -98,32 +114,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../data/data_em.html#lucchi-mitochondria">LUCCHI: Mitochondria</a></li>
 </ul>
 </li>
-</ul>
-<p class="caption"><span class="caption-text">Tutorial-System</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_slurm.html">RC Tutorial</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorial_slurm.html#prerequisites">Prerequisites.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial_slurm.html#setup-instructions">Setup Instructions.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial_slurm.html#running-jobs-slurm">Running Jobs (SLURM)</a></li>
-</ul>
-</li>
-</ul>
-<p class="caption"><span class="caption-text">Tutorial-AI</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="tutorial_align.html">Image Alignment</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorial_align.html#local-affine-alignment">Local Affine Alignment</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_preprocess.html">Image Preprocess</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorial_preprocess.html#image-deflicker">Image Deflicker</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">EM-Segmentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_ng.html">Visualization</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorial_ng.html#neuroglancer">Neuroglancer</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../data/data_ivf.html">IVF Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/data_cycif.html">CYCIF Datasets</a></li>
 </ul>
 
             
@@ -169,13 +161,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>EM-Segmentation</li>
+      <li>Rhoana2 Tutorials</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/tutorial/tutorial_seg.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/computation/tutorial.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -188,13 +180,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="em-segmentation">
-<h1>EM-Segmentation<a class="headerlink" href="#em-segmentation" title="Permalink to this headline">¶</a></h1>
-<ol class="arabic simple">
-<li><p>Check out tutorials at <a class="reference external" href="https://zudi-lin.github.io/pytorch_connectomics/build/html/tutorials/snemi.html">pytorch_connectomics</a></p></li>
-<li><p>A Pytorch-based end-to-end segmentation pipeline for neurons (<a class="reference external" href="https://vcg.github.io/newbie-wiki/build/html/data/data_em.html#snemi3d-segmentation">SNEMI3D
-dataset</a>), synapse (<a class="reference external" href="https://vcg.github.io/newbie-wiki/build/html/data/data_em.html#cremi-segmentation-synapse">CREMI dataset</a>) and mitochondria (<a class="reference external" href="https://vcg.github.io/newbie-wiki/build/html/data/data_em.html#lucchi-mitochondria">Lucchi dataset</a>)</p></li>
-</ol>
+  <div class="section" id="rhoana2-tutorials">
+<h1>Rhoana2 Tutorials<a class="headerlink" href="#rhoana2-tutorials" title="Permalink to this headline">¶</a></h1>
+<p>Here is the tutorial for our <a class="reference external" href="https://www.rhoana.org/rhoana2/build/html/index.html">Rhoana2</a> Connectomics pipeline.</p>
 </div>
 
 
@@ -205,10 +193,10 @@ dataset</a>), synapse (<a class="reference external" href="https://vcg.github.io
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tutorial_ng.html" class="btn btn-neutral float-right" title="Visualization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../data/data_em.html" class="btn btn-neutral float-right" title="EM-Connectomics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="tutorial_preprocess.html" class="btn btn-neutral float-left" title="Image Preprocess" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="jupyter_on_cluster.html" class="btn btn-neutral float-left" title="Running Jupyter lab on RC cluster" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
