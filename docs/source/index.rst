@@ -5,11 +5,20 @@ Welcome to Visual Computing Group
    :titlesonly:
    :glob:
    :maxdepth: 1
-   :caption: Setup
+   :caption: Logistics
 
-   setup/setup_before
-   setup/setup_registration
-   setup/setup_computation
+   setup/before
+   setup/registration
+
+.. toctree::
+   :glob:
+   :maxdepth: 2
+   :caption: Computation
+   
+   computation/machine_slurm
+   computation/machine_group
+   computation/machine_local
+   computation/tutorial
 
 .. toctree::
    :glob:
@@ -17,21 +26,5 @@ Welcome to Visual Computing Group
    :caption: Data
    
    data/data_em.rst
-
-.. toctree::
-   :glob:
-   :maxdepth: 2
-   :caption: Tutorial-System
-   
-   tutorial/tutorial_install
-   tutorial/tutorial_slurm
-
-.. toctree::
-   :glob:
-   :maxdepth: 2
-   :caption: Tutorial-AI
-   
-   tutorial/tutorial_align
-   tutorial/tutorial_preprocess
-   tutorial/tutorial_seg
-   tutorial/tutorial_ng
+   data/data_ivf.rst
+   data/data_cycif.rst
