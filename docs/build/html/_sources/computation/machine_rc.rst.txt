@@ -15,7 +15,7 @@ RC Cluster
 
     .. code-block:: none
     
-    ssh {username}@login.rc.fas.harvard.edu
+        ssh {username}@login.rc.fas.harvard.edu
 
 - machine partitions option (``-p``): use ``cox``, ``seas_dgx1``, ``gpu_requeue``
 
