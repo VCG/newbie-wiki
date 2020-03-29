@@ -12,7 +12,7 @@ Welcome to Visual Computing Group
 
 .. toctree::
    :glob:
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Computation
    
    computation/machine_rc
