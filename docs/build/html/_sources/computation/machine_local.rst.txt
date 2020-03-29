@@ -24,6 +24,7 @@ For deep learning related functionality, GPUs are required for speed.
         source deactivate
 
 - Install Jupyter notebook for interactive result display
+
     - create new kernel (first install ``ipython, ipykernel``)::
 
           ipython kernel install --user --name ${conda-env-name} --display-name "${display-name}" 
