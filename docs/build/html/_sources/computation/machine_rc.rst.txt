@@ -47,8 +47,8 @@ RC Cluster
         #SBATCH -p gpu_requeue      # Partition to submit to
         #SBATCH --gres=gpu:1        # Number of GPUs
         #SBATCH --mem=16000         # Memory pool for all cores (see also --mem-per-cpu) 
-        #SBATCH -o {file where STDOUT will be written}{_%j.out}   # %j inserts jobid
-        #SBATCH -e {file where STDERR will be written}{_%j.err}   # %j inserts jobid
+        #SBATCH -o OUTPUT_FILENAME_%j.out  # %j inserts jobid
+        #SBATCH -e OUTPUT_FILENAME_%j.err  # %j inserts jobid
         
         YOUR COMMAND HERE
         .........
@@ -120,3 +120,4 @@ RC Cluster
   
     module load cuda/9.0-fasrc02 cudnn/7.0_cuda9.0-fasrc01
 
+- `Harvard VPN <https://docs.rc.fas.harvard.edu/kb/vpn-setup/#VPN_Software_Installation/>`_ 
