@@ -2,14 +2,8 @@ Harvard RC server
 =======================
 The server uses the slurm scheduler `official tutorial <https://www.rc.fas.harvard.edu/resources/running-jobs/>`_.
 
-Prerequisites
----------------------
 
-#. `User ID for Harvard RC <https://www.rc.fas.harvard.edu/resources/access-and-login/>`_ 
-
-
-RC Cluster
----------------------
+- `User ID for Harvard RC <https://www.rc.fas.harvard.edu/resources/access-and-login/>`_ 
 
 - Login into RC 
 
@@ -104,17 +98,22 @@ RC Cluster
 
     - Parameters:
 
-        - p1: port you want to display on localhost
-        - p2: port on rc server
-        - m1: coxgpu name, e.g. coxgpu06
+        - p1: port number you want to display on localhost
+        - p2: port number on RC login server
+        - p3: port number on RC compute server (6006 for tensorboard)
+        - m1: server name, e.g. coxgpu06
 
-    - On local machine::
+    - Local machine -> RC login server::
       
         ssh -L p1:localhost:p2 xx@login.rc.fas.harvard.edu
 
-    - On rc login server:: 
+    - RC login server -> RC server:: 
       
-        ssh -L p2:localhost:p2 m1
+        ssh -L p2:localhost:p3 m1
+
+    - On RC server:: 
+      
+        tensorboard --logdir OUTPUT_FOLDER
 
 - Load cuda on rc cluster::
   

@@ -91,11 +91,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Computation</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Harvard RC server</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rc-cluster">RC Cluster</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Harvard RC server</a></li>
 <li class="toctree-l1"><a class="reference internal" href="machine_group.html">Group server (hp03 machine)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="machine_local.html">Local Machine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jupyter_on_cluster.html">Running Jupyter lab on RC cluster</a><ul>
@@ -183,15 +179,8 @@
   <div class="section" id="harvard-rc-server">
 <h1>Harvard RC server<a class="headerlink" href="#harvard-rc-server" title="Permalink to this headline">¶</a></h1>
 <p>The server uses the slurm scheduler <a class="reference external" href="https://www.rc.fas.harvard.edu/resources/running-jobs/">official tutorial</a>.</p>
-<div class="section" id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li><p><a class="reference external" href="https://www.rc.fas.harvard.edu/resources/access-and-login/">User ID for Harvard RC</a></p></li>
-</ol>
-</div>
-<div class="section" id="rc-cluster">
-<h2>RC Cluster<a class="headerlink" href="#rc-cluster" title="Permalink to this headline">¶</a></h2>
 <ul>
+<li><p><a class="reference external" href="https://www.rc.fas.harvard.edu/resources/access-and-login/">User ID for Harvard RC</a></p></li>
 <li><p>Login into RC</p>
 <blockquote>
 <div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ssh {username}@login.rc.fas.harvard.edu
@@ -297,19 +286,25 @@ YOUR COMMAND HERE
 <li><p>Parameters:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>p1: port you want to display on localhost</p></li>
-<li><p>p2: port on rc server</p></li>
-<li><p>m1: coxgpu name, e.g. coxgpu06</p></li>
+<li><p>p1: port number you want to display on localhost</p></li>
+<li><p>p2: port number on RC login server</p></li>
+<li><p>p3: port number on RC compute server (6006 for tensorboard)</p></li>
+<li><p>m1: server name, e.g. coxgpu06</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p>On local machine:</p>
+<li><p>Local machine -&gt; RC login server:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">L</span> <span class="n">p1</span><span class="p">:</span><span class="n">localhost</span><span class="p">:</span><span class="n">p2</span> <span class="n">xx</span><span class="nd">@login</span><span class="o">.</span><span class="n">rc</span><span class="o">.</span><span class="n">fas</span><span class="o">.</span><span class="n">harvard</span><span class="o">.</span><span class="n">edu</span>
 </pre></div>
 </div>
 </li>
-<li><p>On rc login server:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">L</span> <span class="n">p2</span><span class="p">:</span><span class="n">localhost</span><span class="p">:</span><span class="n">p2</span> <span class="n">m1</span>
+<li><p>RC login server -&gt; RC server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">L</span> <span class="n">p2</span><span class="p">:</span><span class="n">localhost</span><span class="p">:</span><span class="n">p3</span> <span class="n">m1</span>
+</pre></div>
+</div>
+</li>
+<li><p>On RC server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tensorboard</span> <span class="o">--</span><span class="n">logdir</span> <span class="n">OUTPUT_FOLDER</span>
 </pre></div>
 </div>
 </li>
@@ -323,7 +318,6 @@ YOUR COMMAND HERE
 </li>
 <li><p><a class="reference external" href="https://docs.rc.fas.harvard.edu/kb/vpn-setup/#VPN_Software_Installation/">Harvard VPN</a></p></li>
 </ul>
-</div>
 </div>
 
 
