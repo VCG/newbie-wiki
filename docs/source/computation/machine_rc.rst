@@ -13,6 +13,8 @@ The server uses the slurm scheduler `official tutorial <https://www.rc.fas.harva
 
 - machine partitions option (``-p``): use ``cox``, ``seas_dgx1``, ``gpu_requeue``
 
+- check machine availability in a partition: use ``showq -o -p <partition>``
+
 - useful ``slurm`` commands
 
     - ``squeue -u ${username}``: check job status
