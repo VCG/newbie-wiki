@@ -15,6 +15,9 @@ The server uses the slurm scheduler `official tutorial <https://www.rc.fas.harva
 
 - check machine availability in a partition: use ``showq -o -p <partition>``
 
+- script to find the best partition to use given your sbatch file: `link
+  <https://github.com/fasrc/best_slurm_partition>`_
+
 - useful ``slurm`` commands
 
     - ``squeue -u ${username}``: check job status
@@ -40,7 +43,7 @@ The server uses the slurm scheduler `official tutorial <https://www.rc.fas.harva
         #SBATCH -n 1                # Number of cores
         #SBATCH -N 1                # Ensure that all cores are on one machine
         #SBATCH -t 2-00:00          # Runtime in D-HH:MM, minimum of 10 minutes
-        #SBATCH -p gpu_requeue      # Partition to submit to
+        #SBATCH -p cox      # Partition to submit to
         #SBATCH --gres=gpu:1        # Number of GPUs
         #SBATCH --mem=16000         # Memory pool for all cores (see also --mem-per-cpu) 
         #SBATCH -o OUTPUT_FILENAME_%j.out  # %j inserts jobid

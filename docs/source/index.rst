@@ -7,8 +7,8 @@ Welcome to Visual Computing Group
    :maxdepth: 1
    :caption: Logistics
 
-   setup/before
-   setup/registration
+   setup/remote
+   setup/on_campus
 
 .. toctree::
    :glob:
